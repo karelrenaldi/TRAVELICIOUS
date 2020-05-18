@@ -1,0 +1,11 @@
+{
+  "name": "sass-project-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass -o css sass -w"
+  },
+  "author": "",
+  "license": "ISC"
+}
