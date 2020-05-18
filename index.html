@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
     <div class="container">
         <div class="splashscreen">
-            <div class="title"></div>
-            <div class="desc"></div>
+            <div class="title">TRAVELICIOUS</div>
+            <div class="desc">YOUR BEST TRAVEL PARTNER</div>
             <div class="buttonContainer">
-                <a href="map.html" class="button">Explore The World</a>
-                <a href="itinerary.html" class="button">Create Iternary</a>
+                <a href="map.html" class="half">
+                    <div class="button">
+                        Explore the World
+                    </div>
+                </a>
+                <a href="map.html" class="half">
+                    <div class="button">
+                        Create Itinerary
+                    </div>
+                </a>
             </div>
         </div>
     </div>

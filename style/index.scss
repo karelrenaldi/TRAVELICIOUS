@@ -3,6 +3,34 @@
 
 .splashscreen{
     @include setup_size(100%, 100%);
-    @include flexCenter(row);
+    @include flex_center(column);
 }
 
+.title,.desc,.buttonContainer{
+    width : 100%;
+    text-align: center;
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: 1000;
+    padding : 0.05em 0em;
+}
+.desc{
+    font-size: 0.75rem;
+    letter-spacing: 2.5px;
+    padding : 0.25em 0em;
+}
+
+.buttonContainer{
+    @include setup_size(100%, 10%);
+    @include flex_center(row);
+    float : left;
+    padding : 0.25em 0em;
+}
+
+.half{
+    @include setup_size(50%,100%);
+    @include reset_text();
+    padding : 0.25em;
+}

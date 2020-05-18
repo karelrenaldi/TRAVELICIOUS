@@ -1,0 +1,113 @@
+@import './variable';
+@import './mixin';
+
+.header,.map{
+    @include flex_center(column);
+}
+
+.header{
+    @include setup_size(100%, 10%);
+    text-align: center;
+    font-size: 0.5rem;
+}
+
+.map{
+    @include setup_size(100%, 80%);
+    padding : 10% 0;
+}
+
+#world-map{
+    z-index: 0;
+}
+
+.infoWindow,.blogWindow{
+    @include flex_center(column);
+    padding : 5%;
+    position: absolute;
+    border-radius: 16px;
+    background-color: $p_color3;
+    .cross{
+        position: absolute;
+        top : 0px;
+        right : 0px;
+        color : red;
+    }
+}
+
+.infoWindow{
+    @include setup_size(60vw, 25vh);
+    z-index: 1;
+    .info-container{
+        @include setup_size(100%,100%);
+        position: relative;
+    }
+    .country{
+        @include setup_size(100%,30%);
+        font-weight: 1000;
+    }
+    .button-container{
+        @include setup_size(100%,70%);
+    }
+    .button{
+        @include setup_size(48%, 48%);
+        @include flex_center(column);
+        margin : 1%;
+        float : left;
+    }
+}
+
+.blogWindow{
+    @include setup_size(80vw, 80vh);
+    z-index: 2;
+    img{
+        object-fit: cover;
+        max-width: 100%;
+    }
+    .blog-container{
+        @include setup_size(100%,100%);
+        position: relative;
+        overflow: scroll;
+    }
+    .title,.spotlight,.gallery{
+        padding : 5% 0;
+    }
+    .title{
+        @include setup_size(100%,10%);
+    }
+    .spotlight{
+        @include setup_size(100%,70%);
+        background-color: $p_color2;
+        .spot-img{
+            @include setup_size(100%,60%);
+            background-color: $p_color1;
+            overflow: hidden;
+        }
+        .spot-text{
+            @include setup_size(100%,40%);
+            overflow: scroll;
+        }
+    }
+    .gallery{
+        @include setup_size(100%,20%);
+        .card{
+            @include setup_size(50%,100px);
+            border-radius: 16px;
+            position: relative;
+            .card-img{
+                overflow: hidden;
+                border-radius: 16px;
+                filter : brightness(0.5);
+            }
+            .card-title{
+                color : white;
+                text-align: center;
+                @include center_text();
+            }
+        }
+    }
+}
+
+.footer{
+    @include setup_size(100%, 10%);
+    a{@include reset_text()};
+}

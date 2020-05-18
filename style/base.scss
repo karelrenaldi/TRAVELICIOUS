@@ -1,19 +1,38 @@
+@import './variable';
+@import './mixin';
+
+
 @font-face { font-family: Janda; src: url('JandaManateeSolid.ttf'); }
 
 *{
     margin : 0;
     padding : 0;
 }
+
 div{
     box-sizing: border-box;
 }
+
 body{
     @include setup_size(100vw, 100vh);
     box-sizing: border-box;
-    padding : 5vh 5vw;
+    padding : 5vh 10vw;
     overflow: hidden;
     font-family: "Janda";
 }
+
 .container{
     @include setup_size(100%,100%);
+    @include flex_center(column);
+    overflow: hidden;
+}
+
+.button{
+    @include setup_size(100%,100%);
+    @include flex_center(column);
+    font-weight: 500;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    border-radius: 16px;
+    background-color: $p_color1;
 }
