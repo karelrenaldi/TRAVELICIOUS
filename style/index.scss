@@ -1,0 +1,8 @@
+@import './variable';
+@import './mixin';
+
+.splashscreen{
+    @include setup_size(100%, 100%);
+    @include flexCenter(row);
+}
+
