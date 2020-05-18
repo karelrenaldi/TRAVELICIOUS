@@ -1,0 +1,16 @@
+@font-face { font-family: Janda; src: url('JandaManateeSolid.ttf'); }
+
+*{
+    margin : 0;
+    padding : 0;
+}
+div{
+    box-sizing: border-box;
+}
+body{
+    @include setup_size(100vw, 100vh);
+    box-sizing: border-box;
+    padding : 5vh 5vw;
+    overflow: hidden;
+    font-family: "Janda";
+}

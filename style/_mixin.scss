@@ -1,0 +1,11 @@
+@mixin setup_size($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin flex_center($dir){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $dir;
+}
