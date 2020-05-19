@@ -3,115 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Itinerary</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap"
       rel="stylesheet"
     />
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        height: 100vh;
-        background-color: navajowhite;
-        display: grid;
-        justify-items: center;
-        align-content: start;
-        font-family: "Pangolin";
-      }
-      .itinerary-list {
-        display: grid;
-        grid-template-rows: 2rem 7.6rem auto;
-        grid-gap: 1em;
-        padding: 1em;
-        min-height: 100vh;
-      }
-      .itinerary {
-        display: grid;
-        grid-template-areas:
-          "date text-input"
-          "notes notes"
-          "submit submit";
-        grid-gap: 0.3em;
-      }
-      input[type="text"],
-      input[type="date"],
-      button[type="submit"],
-      textarea {
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        background-color: #262626;
-        border-radius: 4px;
-        color: aliceblue;
-        border: none;
-      }
-      input[type="text"] {
-        grid-area: text-input;
-        text-align: center;
-      }
-      input[type="date"] {
-        grid-area: date;
-        min-height: 2rem;
-        text-transform: uppercase;
-      }
-      button[type="submit"] {
-        grid-area: submit;
-        padding: 0.4em 0;
-      }
-      textarea {
-        grid-area: notes;
-        min-height: 3rem;
-        text-align: center;
-      }
-      .itinerary-list h1 {
-        text-align: center;
-        color: #262626;
-      }
-
-      ul {
-        display: grid;
-        grid-auto-rows: 4em;
-        grid-gap: 0.3em;
-        padding-top: 0.3em;
-        border-top: 3px solid #262626;
-      }
-
-      ul li {
-        list-style: none;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-gap: 0.7em;
-      }
-      li > * {
-        background-color: #262626;
-        color: aliceblue;
-        padding: 0.3em 0.3em;
-      }
-
-      li .items-date {
-        display: flex;
-        align-items: center;
-      }
-
-      .items-date h3 {
-        font-size: 0.95rem;
-      }
-
-      li .items-data {
-        position: relative;
-      }
-      .items-data .delete {
-        position: absolute;
-        font-size: 0.7rem;
-        top: 3px;
-        right: 4px;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="./style/itinerary.css" />
   </head>
   <body>
     <div class="itinerary-list">
@@ -130,58 +27,27 @@
       </form>
       <ul class="list"></ul>
     </div>
-    <script>
-      const itineraryForm = document.querySelector(".itinerary");
-      const list = itineraryForm.nextElementSibling;
-      let items = [];
 
-      itineraryForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const inputs = Array.from(e.currentTarget);
-        const item = {
-          place: inputs[0].value,
-          date: new Date(inputs[1].value).getDate(),
-          month: new Date(inputs[1].value).getMonth() + 1,
-          year: new Date(inputs[1].value).getFullYear(),
-          notes: inputs[2].value,
-          id: Date.now(),
-        };
-        console.log(item);
-        items.push(item); //update items
-        console.info("SUBMITTED");
-        e.target.reset(); //reset to default
-        list.dispatchEvent(new CustomEvent("updateItems"));
-      });
-
-      function renderItem(e) {
-        const html = items.map(
-          (item) => `
-        <li class="items">
-          <div class="items-date">
-            <h3>${item.date}/${item.month}/${item.year}</h3>
-          </div>
-          <div class="items-data">
-            <h3>${item.place}</h3>
-            <p>${item.notes}</p>
-            <p class="delete" aria-label="${item.id}">❌</p>
-          </div>
-        </li>
-        `
-        );
-        list.innerHTML = html.join("\n");
-      }
-
-      function deleteItems(id) {
-        items = items.filter((item) => item.id !== id);
-        list.dispatchEvent(new CustomEvent("updateItems"));
-      }
-
-      list.addEventListener("updateItems", renderItem);
-      list.addEventListener("click", ({ target }) => {
-        target.matches(".delete")
-          ? deleteItems(parseInt(target.getAttribute("aria-label")))
-          : null;
-      });
-    </script>
+    <div class="modal">
+      <div class="modalInner">
+        <div class="modalInnerClose">❌</div>
+        <h1>Edit Itinerary</h1>
+        <form class="itinerary-edit" autocomplete="off">
+          <input
+            type="text"
+            name="item"
+            id="item"
+            placeholder="Place To Visit"
+            required
+          />
+          <input type="date" name="date" id="date" required />
+          <textarea name="text" placeholder="Notes" required></textarea>
+          <button type="submit">Edit</button>
+          <h3></h3>
+        </form>
+      </div>
+    </div>
+    <script src="./js/itinerary.js"></script>
+    <script src="./js/itinerary-modal.js"></script>
   </body>
 </html>

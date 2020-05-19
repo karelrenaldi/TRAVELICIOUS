@@ -1,0 +1,175 @@
+$font-pangolin: "Pangolin";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  background-color: navajowhite;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  font-family: $font-pangolin;
+}
+%inputBase {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: #262626;
+  border-radius: 4px;
+  color: aliceblue;
+  border: none;
+}
+
+// input style
+input[type="text"] {
+  grid-area: text-input;
+  text-align: center;
+  @extend %inputBase;
+}
+input[type="date"] {
+  grid-area: date;
+  min-height: 2rem;
+  text-transform: uppercase;
+  @extend %inputBase;
+}
+button[type="submit"] {
+  grid-area: submit;
+  padding: 0.4em 0;
+  cursor: pointer;
+  @extend %inputBase;
+}
+textarea {
+  grid-area: notes;
+  min-height: 3rem;
+  text-align: center;
+  @extend %inputBase;
+}
+
+.itinerary-list {
+  display: grid;
+  grid-template-rows: 2rem 7.6rem auto;
+  grid-gap: 1em;
+  padding: 1em;
+  min-height: 100vh;
+  h1 {
+    text-align: center;
+    color: #262626;
+  }
+}
+.itinerary,
+.itinerary-edit {
+  display: grid;
+  grid-template-areas:
+    "date text-input"
+    "notes notes"
+    "submit submit";
+  grid-gap: 0.3em;
+}
+
+ul {
+  display: grid;
+  grid-auto-rows: 4em;
+  grid-gap: 0.3em;
+  padding-top: 0.3em;
+  border-top: 3px solid #262626;
+  li {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 0.7em;
+  }
+}
+
+li {
+  .items-data {
+    position: relative;
+    .delete {
+      position: absolute;
+      font-size: 0.7rem;
+      top: 3px;
+      right: 4px;
+      cursor: pointer;
+    }
+    .edit {
+      position: absolute;
+      font-size: 0.7rem;
+      top: 20px;
+      right: 4px;
+      cursor: pointer;
+    }
+  }
+  .items-date {
+    display: flex;
+    align-items: center;
+    h3 {
+      font-size: 0.95rem;
+    }
+  }
+  & > * {
+    background-color: #262626;
+    color: aliceblue;
+    padding: 0.3em 0.3em;
+  }
+}
+
+//modal
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  &Inner {
+    border-radius: 4px;
+    padding: 1em;
+    padding-top: 6em;
+    background: white;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transform: translateY(-100vh);
+    transition: all 0.5s;
+    min-height: calc(90vh - 100px);
+    min-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    h1 + .itinerary-edit {
+      margin-top: 1em;
+    }
+    .itinerary-edit {
+      grid-gap: 1.1em;
+      textarea {
+        min-height: 5rem;
+      }
+    }
+    &Close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    h3 {
+      text-align: center;
+    }
+  }
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+    .modalInner {
+      transform: translateY(0);
+    }
+  }
+}
