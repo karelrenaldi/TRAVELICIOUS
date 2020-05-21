@@ -4,6 +4,10 @@
 
 @font-face { font-family: Janda; src: url('JandaManateeSolid.ttf'); }
 
+#app{
+    @include setup_size(100%,100%);
+}
+
 *{
     margin : 0;
     padding : 0;
@@ -33,6 +37,6 @@ body{
     font-weight: 500;
     font-size: 0.5rem;
     text-transform: uppercase;
-    border-radius: 16px;
+    border-radius: 4px;
     background-color: $p_color1;
 }

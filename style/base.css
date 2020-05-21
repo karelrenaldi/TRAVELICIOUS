@@ -3,6 +3,11 @@
   src: url("JandaManateeSolid.ttf");
 }
 
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -61,7 +66,7 @@ body {
   font-weight: 500;
   font-size: 0.5rem;
   text-transform: uppercase;
-  border-radius: 16px;
+  border-radius: 4px;
   background-color: #4BBCF4;
 }
 /*# sourceMappingURL=base.css.map */

@@ -13,65 +13,26 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        var selected = 'none';
+    </script>
     <script type="text/javascript" src="js/data.js"></script>
-    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/babel" src="js/map.js"></script>
+    <script type="text/javascript" src="js/modalHandler.js"></script>
+    <script type="text/babel" src="component/BlogWindow.js"></script>
+    <script type="text/babel" src="component/InfoWindow.js"></script>
+    <script type="text/babel" src="component/Map.js"></script>
+    <script type="text/babel" src="component/Form.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Let's Explore The World!</h1>
-        </div>
-        <div class="map">
-            <div id="world-map"></div>
-            <div class="infoWindow">
-                <div class="info-container">
-                    <div class="cross">X</div>
-                    <div class="country">Indonesia</div>
-                    <div class="button-container">
-                        <div class="button">
-                            Place to Visit
-                        </div>
-                        <div class="button">
-                            Food to eat
-                        </div>
-                        <div class="button">
-                            Culture
-                        </div>
-                        <div class="button">
-                            Do's and Dont's
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blogWindow">
-                <div class="blog-container">
-                    <div class="cross">X</div>
-                    <div class="title">INDONESIA MUST TRY FOOD</div>
-                    <div class="spotlight">
-                        <div class="spot-img">
-                            <img src="https://www.seriouseats.com/2019/06/20190604-nasi-goreng-fried-rice-vicky-wasik-7.jpg" alt="">
-                        </div>
-                        <div class="spot-text">
-                            <p>Lorem ipsum scrollable</p>
-                        </div>
-                    </div>
-                    <div class="gallery">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="https://www.seriouseats.com/2019/06/20190604-nasi-goreng-fried-rice-vicky-wasik-7.jpg" alt="">
-                            </div>
-                            <div class="card-title">Nasi Goreng</div>
-                        </div>
-                    </div>
-                </div>
+        <div id="app"></div>
+        <div class="info">
+            <div class = "infoDrop" onclick ="removeModal('info')"></div>
+            <div class = "infoWindow">
+                
             </div>
         </div>
-        <div class="footer">
-            <a href="map.html">
-                <div class="button">
-                    Create Itinerary
-                </div>
-            </a>
-        </div>
+    </div>
 </body>
 </html>

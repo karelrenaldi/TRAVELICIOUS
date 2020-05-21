@@ -1,102 +1,143 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 body {
   height: 100vh;
   background-color: navajowhite;
+  display: -ms-grid;
   display: grid;
   justify-items: center;
-  align-content: start;
-  font-family: "Pangolin"; }
+  -ms-flex-line-pack: start;
+      align-content: start;
+  font-family: "Pangolin";
+}
 
 input[type="text"], input[type="date"], button[type="submit"], textarea {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background-color: #262626;
   border-radius: 4px;
   color: aliceblue;
-  border: none; }
+  border: none;
+}
 
 input[type="text"] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
   grid-area: text-input;
-  text-align: center; }
+  text-align: center;
+}
 
 input[type="date"] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: date;
   min-height: 2rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 button[type="submit"] {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: submit;
   padding: 0.4em 0;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 textarea {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: notes;
   min-height: 3rem;
-  text-align: center; }
+  text-align: center;
+}
 
 .itinerary-list {
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: 2rem 7.6rem auto;
+  -ms-grid-rows: 2rem 7.6rem auto;
+      grid-template-rows: 2rem 7.6rem auto;
   grid-gap: 1em;
   padding: 1em;
-  min-height: 100vh; }
+  min-height: 100vh;
+}
 
 .itinerary-list h1 {
   text-align: center;
-  color: #262626; }
+  color: #262626;
+}
 
 .itinerary,
 .itinerary-edit {
+  display: -ms-grid;
   display: grid;
-  grid-template-areas: "date text-input" "notes notes" "submit submit";
-  grid-gap: 0.3em; }
+      grid-template-areas: "date text-input" "notes notes" "submit submit";
+  grid-gap: 0.3em;
+}
 
 ul {
+  display: -ms-grid;
   display: grid;
   grid-auto-rows: 4em;
   grid-gap: 0.3em;
   padding-top: 0.3em;
-  border-top: 3px solid #262626; }
+  border-top: 3px solid #262626;
+}
 
 ul li {
   list-style: none;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 0.7em; }
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 0.7em;
+}
 
 li .items-data {
-  position: relative; }
+  position: relative;
+}
 
 li .items-data .delete {
   position: absolute;
   font-size: 0.7rem;
   top: 3px;
   right: 4px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 li .items-data .edit {
   position: absolute;
   font-size: 0.7rem;
   top: 20px;
   right: 4px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 li .items-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
 li .items-date h3 {
-  font-size: 0.95rem; }
+  font-size: 0.95rem;
+}
 
 li > * {
   background-color: #262626;
   color: aliceblue;
-  padding: 0.3em 0.3em; }
+  padding: 0.3em 0.3em;
+}
 
 .modal {
   position: fixed;
@@ -106,51 +147,78 @@ li > * {
   left: 0;
   right: 0;
   bottom: 0;
+  display: -ms-grid;
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.5s; }
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
 
 .modalInner {
   border-radius: 4px;
   padding: 1em;
   padding-top: 6em;
   background: white;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
   position: relative;
-  transform: translateY(-100vh);
+  -webkit-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   min-height: calc(90vh - 100px);
   min-width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
 .modalInner h1 + .itinerary-edit {
-  margin-top: 1em; }
+  margin-top: 1em;
+}
 
 .modalInner .itinerary-edit {
-  grid-gap: 1.1em; }
+  grid-gap: 1.1em;
+}
 
 .modalInner .itinerary-edit textarea {
-  min-height: 5rem; }
+  min-height: 5rem;
+}
 
 .modalInnerClose {
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 1.2rem;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .modalInner h3 {
-  text-align: center; }
+  text-align: center;
+}
 
 .modal.open {
   opacity: 1;
-  pointer-events: all; }
+  pointer-events: all;
+}
 
 .modal.open .modalInner {
-  transform: translateY(0); }
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+/*# sourceMappingURL=itinerary.css.map */

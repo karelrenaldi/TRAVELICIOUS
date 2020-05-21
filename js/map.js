@@ -8,8 +8,6 @@ google.charts.load('current', {
     var data = google.visualization.arrayToDataTable(countryList);
 
     var options = {
-        displayMode: 'text',
-        region : 142,
         colorAxis: {colors: ['green', 'blue']}
       };
 
@@ -19,13 +17,18 @@ google.charts.load('current', {
 
     google.visualization.events.addListener(chart, "select", function () {
       const selection = chart.getSelection();
-      console.log(selection);
+      // console.log(selection);
       if (selection.length) {
         const label = data.getValue(selection[0].row, 0);
-        const counts = countryData.find((count) => count.country === label);
-        console.log(counts);
+        const counts = countryList.find((count) => count[0] === label);
+        selected = counts;
+        openModal("info");
+        if(counts){
+          ReactDOM.render(<InfoWindow country={counts} data ={counts}/>,document.querySelector('.infoWindow'));
+        }
       } else {
-        console.log("NOTHING");
+        selected = 'none';
       }
+      console.log(selected);
     });
   }
