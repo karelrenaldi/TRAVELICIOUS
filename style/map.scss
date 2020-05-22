@@ -17,6 +17,7 @@
 }
 
 #world-map{
+    width : 100%;
     z-index: 0;
 }
 
@@ -56,25 +57,28 @@
         top : 0px;
         right : 0px;
         color : red;
+        font-size: 16px;
+        font-weight: 1000;
         &:hover{
             cursor: pointer;
         }
     }
     .info-container{
-        @include setup_size(100%,10vh);
+        @include setup_size(100%,15vh);
         position: relative;
         .country{
-            @include setup_size(100%,40%);
+            @include setup_size(100%,25%);
+            font-size : 16px;
             font-weight: 1000;
         }
         .button-container{
-            @include setup_size(100%,60%);
+            @include setup_size(100%,75%);
         }
         .button{
             @include setup_size(48%, 100%);
             @include flex_center(column);
             position: relative;
-            margin : 1%;
+            margin : 0% 1%;
             float : left;
             img{
                 @include setup_size(100%,100%);
@@ -101,64 +105,43 @@
                 filter: brightness(0.8);
             }
         }
-        .button{
-        @include setup_size(48%, 100%);
-        @include flex_center(column);
-        position: relative;
-        margin : 1%;
-        float : left;
-        img{
-            @include setup_size(100%,100%);
-            object-fit: cover;
-            overflow: hidden;
-            filter : brightness(0.5);
-        }
-        .text{
-            padding : 10%;
-            @include setup_size(100%,50%);
-            @include flex_center(row);
-            position: absolute;
-            color : white;
-            text-align: center;
-        }
-        &:hover{
-            img{
-                filter : brightness(0.8);
-            }
-        }
-    }
-    .active{
-        img{
-            filter: brightness(0.8);
-        }
-    }
     }
 
     .blog-container{
         @include setup_size(100%, 60vh);
-        padding-top : 2vh;
+        padding-top : 1vh;
         display : block;
         animation-name: completeBlog;
         animation-duration: 1s;
-        .title,.spotlight,.gallery{
-            padding : 5% 0;
+        .spotlight,.gallery{
+            box-sizing: border-box;
+            padding : 2.5% 0;
         }
         .title{
             @include setup_size(100%,10%);
+            @include flex_center(row);
+            font-size : 14px;
+            font-weight: 1000;
             text-align: center;
         }
         .spotlight{
             @include setup_size(100%,70%);
+            border-radius: 4px;
             .spot-img{
                 @include setup_size(100%,60%);
                 border-radius: 4px;
                 background-color: $p_color1;
                 overflow: hidden;
+                img{
+                    @include setup_size(100%,100%);
+                    object-fit: cover;
+                }
             }
             .spot-text{
                 @include setup_size(100%,40%);
-                padding-top : 5%;
-                overflow: scroll;
+                background-color: #f3f3f3;
+                padding : 10px;
+                overflow : hidden;
             }
         }
         .gallery{
@@ -184,6 +167,11 @@
                     color : white;
                     text-align: center;
                     @include center_text();
+                }
+            }
+            .active{
+                img{
+                    filter: brightness(0.8);
                 }
             }
         }

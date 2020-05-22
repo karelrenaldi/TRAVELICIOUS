@@ -1,0 +1,32 @@
+[
+    {
+        "country" : "Indonesia",
+        "place" : [
+            {
+                "name" : "Bali Island",
+                "desc" : "A Heavenly island everybody could dream of!",
+                "img" : "bali.jpg"
+            },
+            {
+                "name" : "Thousand Island",
+                "desc" : "Thousand island located near Jakarta, as it's name, it has thousand small islands for thousand journey!",
+                "img" : "pulauseribu.jpg"
+            }
+        ]
+    },
+    {
+        "country" : "Germany",
+        "place" : [
+            {
+                "name" : "Berlin's Brandenburg Gate",
+                "desc" : "Modeled on the Acropolis in Athens and built for King Frederick William II in 1791, the monumental sandstone Brandenburg Gate in Berlin's Mitte district was the city's first Neoclassical structure",
+                "img" : "brandenburg.jpg"
+            },
+            {
+                "name" : "Cologne Cathedral",
+                "desc" : "located on the banks of the Rhine and is undoubtedly Cologne's most impressive landmark. ",
+                "img" : "cologne.jpg"
+            }
+        ]
+    }
+]

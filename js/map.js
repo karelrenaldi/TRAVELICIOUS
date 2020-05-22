@@ -24,11 +24,11 @@ google.charts.load('current', {
         selected = counts;
         openModal("info");
         if(counts){
-          ReactDOM.render(<InfoWindow country={counts} data ={counts}/>,document.querySelector('.infoWindow'));
+          ReactDOM.render(<InfoWindow country={counts.toString()} data ={counts}/>,document.querySelector('.infoWindow'));
         }
       } else {
         selected = 'none';
       }
-      console.log(selected);
+      // console.log(selected);
     });
   }

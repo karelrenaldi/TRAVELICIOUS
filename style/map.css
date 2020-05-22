@@ -28,6 +28,7 @@
 }
 
 #world-map {
+  width: 100%;
   z-index: 0;
 }
 
@@ -102,6 +103,8 @@
   top: 0px;
   right: 0px;
   color: red;
+  font-size: 16px;
+  font-weight: 1000;
 }
 
 .infoWindow .cross:hover {
@@ -110,19 +113,20 @@
 
 .infoWindow .info-container {
   width: 100%;
-  height: 10vh;
+  height: 15vh;
   position: relative;
 }
 
 .infoWindow .info-container .country {
   width: 100%;
-  height: 40%;
+  height: 25%;
+  font-size: 16px;
   font-weight: 1000;
 }
 
 .infoWindow .info-container .button-container {
   width: 100%;
-  height: 60%;
+  height: 75%;
 }
 
 .infoWindow .info-container .button {
@@ -142,70 +146,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  margin: 1%;
-  float: left;
-}
-
-.infoWindow .info-container .button img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  overflow: hidden;
-  -webkit-filter: brightness(0.5);
-          filter: brightness(0.5);
-}
-
-.infoWindow .info-container .button .text {
-  padding: 10%;
-  width: 100%;
-  height: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: absolute;
-  color: white;
-  text-align: center;
-}
-
-.infoWindow .info-container .button:hover img {
-  -webkit-filter: brightness(0.8);
-          filter: brightness(0.8);
-}
-
-.infoWindow .info-container .active img {
-  -webkit-filter: brightness(0.8);
-          filter: brightness(0.8);
-}
-
-.infoWindow .info-container .button {
-  width: 48%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: relative;
-  margin: 1%;
+  margin: 0% 1%;
   float: left;
 }
 
@@ -254,7 +195,7 @@
 .infoWindow .blog-container {
   width: 100%;
   height: 60vh;
-  padding-top: 2vh;
+  padding-top: 1vh;
   display: block;
   -webkit-animation-name: completeBlog;
           animation-name: completeBlog;
@@ -262,19 +203,37 @@
           animation-duration: 1s;
 }
 
-.infoWindow .blog-container .title, .infoWindow .blog-container .spotlight, .infoWindow .blog-container .gallery {
-  padding: 5% 0;
+.infoWindow .blog-container .spotlight, .infoWindow .blog-container .gallery {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2.5% 0;
 }
 
 .infoWindow .blog-container .title {
   width: 100%;
   height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 14px;
+  font-weight: 1000;
   text-align: center;
 }
 
 .infoWindow .blog-container .spotlight {
   width: 100%;
   height: 70%;
+  border-radius: 4px;
 }
 
 .infoWindow .blog-container .spotlight .spot-img {
@@ -285,11 +244,19 @@
   overflow: hidden;
 }
 
+.infoWindow .blog-container .spotlight .spot-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .infoWindow .blog-container .spotlight .spot-text {
   width: 100%;
   height: 40%;
-  padding-top: 5%;
-  overflow: scroll;
+  background-color: #f3f3f3;
+  padding: 10px;
+  overflow: hidden;
 }
 
 .infoWindow .blog-container .gallery {
@@ -330,6 +297,11 @@
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.infoWindow .blog-container .gallery .active img {
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
 }
 
 .open {

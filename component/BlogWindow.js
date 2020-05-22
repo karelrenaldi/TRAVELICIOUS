@@ -23,10 +23,12 @@ class BlogWindow extends React.Component{
             <div className = "blog-container">
                 <div className = "title">{this.props.title}</div>
                 <SpotLight
+                    country = {this.props.country}
                     image = {this.state.spotImg}
                     text = {this.state.spotDesc}
                 />
                 <Gallery
+                    country = {this.props.country}
                     data = {this.props.data}
                     onClick = {this.changeSpotlight}
                 />
@@ -40,7 +42,7 @@ class SpotLight extends React.Component{
         return(
             <div className="spotlight">
                 <div className="spot-img">
-                    <img src={"img/"+this.props.image}></img>
+                    <img src={`img/${this.props.country}/${this.props.image}`}></img>
                 </div>
                 <div className="spot-text">
                     {this.props.text}
@@ -56,6 +58,7 @@ class Gallery extends React.Component{
         this.props.data.map((item, index) =>{
             component.push(
                 <Card
+                    country = {this.props.country}
                     key = {index}
                     image = {item.img}
                     title = {item.name}
@@ -76,7 +79,7 @@ class Card extends React.Component{
         return(
             <div className="card" onClick={()=>this.props.onClick(this.props.title)}>
                 <div className="card-img">
-                    <img src={"img/"+this.props.image} alt=""></img>
+                    <img src={`img/${this.props.country}/${this.props.image}`} alt=""></img>
                 </div>
                 <div className="card-title">{this.props.title}</div>
             </div>
