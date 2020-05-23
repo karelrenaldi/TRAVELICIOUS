@@ -17,97 +17,187 @@
 }
 
 #world-map{
+    width : 100%;
     z-index: 0;
 }
 
-.infoWindow,.blogWindow{
-    @include flex_center(column);
-    padding : 5%;
+.info{
+    @include setup_size(100%,100%);
+    @include flex_center(row);
+    transform: translateY(-100%);
+    transition: all 1s;
     position: absolute;
+    top : 0;
+    left : 0;
+}
+
+.infoDrop{
+    @include setup_size(100vw,100vh);
+    min-width: 100vw;
+    min-height: 100vh;
+    display: block;
+    background-color: black;
+    z-index: 1;
+    filter : opacity(0);
+    transition : all 1s;
+}
+
+.infoWindow{
+    @include flex_center(column);
+    width : 75vw;
+    min-height: 10vh;
+    padding : 5%;
+    position: absolute; 
     border-radius: 16px;
     background-color: $p_color3;
+    z-index: 2;
+    transition: transform 1s;
     .cross{
         position: absolute;
         top : 0px;
         right : 0px;
         color : red;
-    }
-}
-
-.infoWindow{
-    @include setup_size(60vw, 25vh);
-    z-index: 1;
-    .info-container{
-        @include setup_size(100%,100%);
-        position: relative;
-    }
-    .country{
-        @include setup_size(100%,30%);
+        font-size: 16px;
         font-weight: 1000;
+        &:hover{
+            cursor: pointer;
+        }
     }
-    .button-container{
-        @include setup_size(100%,70%);
-    }
-    .button{
-        @include setup_size(48%, 48%);
-        @include flex_center(column);
-        margin : 1%;
-        float : left;
-    }
-}
-
-.blogWindow{
-    @include setup_size(80vw, 80vh);
-    z-index: 2;
-    img{
-        object-fit: cover;
-        max-width: 100%;
-    }
-    .blog-container{
-        @include setup_size(100%,100%);
+    .info-container{
+        @include setup_size(100%,15vh);
         position: relative;
-        overflow: scroll;
-    }
-    .title,.spotlight,.gallery{
-        padding : 5% 0;
-    }
-    .title{
-        @include setup_size(100%,10%);
-    }
-    .spotlight{
-        @include setup_size(100%,70%);
-        background-color: $p_color2;
-        .spot-img{
-            @include setup_size(100%,60%);
-            background-color: $p_color1;
-            overflow: hidden;
+        .country{
+            @include setup_size(100%,25%);
+            font-size : 16px;
+            font-weight: 1000;
         }
-        .spot-text{
-            @include setup_size(100%,40%);
-            overflow: scroll;
+        .button-container{
+            @include setup_size(100%,75%);
         }
-    }
-    .gallery{
-        @include setup_size(100%,20%);
-        .card{
-            @include setup_size(50%,100px);
-            border-radius: 16px;
+        .button{
+            @include setup_size(48%, 100%);
+            @include flex_center(column);
             position: relative;
-            .card-img{
+            margin : 0% 1%;
+            float : left;
+            img{
+                @include setup_size(100%,100%);
+                object-fit: cover;
                 overflow: hidden;
-                border-radius: 16px;
                 filter : brightness(0.5);
             }
-            .card-title{
+            .text{
+                padding : 10%;
+                @include setup_size(100%,50%);
+                @include flex_center(row);
+                position: absolute;
                 color : white;
                 text-align: center;
-                @include center_text();
+            }
+            &:hover{
+                img{
+                    filter : brightness(0.8);
+                }
             }
         }
+        .active{
+            img{
+                filter: brightness(0.8);
+            }
+        }
+    }
+
+    .blog-container{
+        @include setup_size(100%, 60vh);
+        padding-top : 1vh;
+        display : block;
+        animation-name: completeBlog;
+        animation-duration: 1s;
+        .spotlight,.gallery{
+            box-sizing: border-box;
+            padding : 2.5% 0;
+        }
+        .title{
+            @include setup_size(100%,10%);
+            @include flex_center(row);
+            font-size : 14px;
+            font-weight: 1000;
+            text-align: center;
+        }
+        .spotlight{
+            @include setup_size(100%,70%);
+            border-radius: 4px;
+            .spot-img{
+                @include setup_size(100%,60%);
+                border-radius: 4px;
+                background-color: $p_color1;
+                overflow: hidden;
+                img{
+                    @include setup_size(100%,100%);
+                    object-fit: cover;
+                }
+            }
+            .spot-text{
+                @include setup_size(100%,40%);
+                background-color: #f3f3f3;
+                padding : 10px;
+                overflow : hidden;
+            }
+        }
+        .gallery{
+            @include setup_size(100%,20%);
+            padding : 0;
+            .card{
+                @include setup_size(48%,100%);  
+                margin : 1%;
+                float : left;
+                position: relative;
+                .card-img{
+                    @include setup_size(100%,100%);
+                    overflow: hidden;
+                    border-radius: 4px;
+                    filter : brightness(0.5);
+                    img{
+                        width : 100%;
+                        height : 100%;
+                        object-fit: cover;
+                    }
+                }
+                .card-title{
+                    color : white;
+                    text-align: center;
+                    @include center_text();
+                }
+            }
+            .active{
+                img{
+                    filter: brightness(0.8);
+                }
+            }
+        }
+    }
+}
+
+.open{
+    transform: translateY(0);
+    .infoDrop{
+        filter : opacity(0.5);
     }
 }
 
 .footer{
     @include setup_size(100%, 10%);
     a{@include reset_text()};
+}
+
+@keyframes completeBlog{
+    0%{
+        height : 0vh;
+        opacity: 0;
+    }
+    50%{
+        height : 60vh; opacity: 0;}
+    100%{
+        opacity : 1;
+    }
 }

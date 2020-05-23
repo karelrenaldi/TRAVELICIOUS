@@ -1,0 +1,32 @@
+[
+    {
+        "country" : "Indonesia",
+        "food" : [
+            {
+                "name" : "Nasi Goreng",
+                "desc" : "Indonesian special fried rice with tons of spice in it!",
+                "img" : "nasigoreng.jpg"
+            },
+            {
+                "name" : "Rendang",
+                "desc" : "World number one dish!",
+                "img" : "rendang.jpg"
+            }
+        ]
+    },
+    {
+        "country" : "Germany",
+        "food" : [
+            {
+                "name" : "Königsberger klopse",
+                "desc" : "Named after the former East Prussian capital of Königsberg (now Kaliningrad in Russia), this tasty dish of meatballs in a creamy white sauce with capers is beloved by grandmothers and chefs alike.",
+                "img" : "klopse.jpg"
+            },
+            {
+                "name" : "Maultaschen",
+                "desc" : "Maultaschen from Swabia are a lot like ravioli but bigger. They are typically palm-sized, square pockets of dough with fillings that run the gamut from savory to sweet and meaty to vegetarian.",
+                "img" : "maultaschen.jpg"
+            }
+        ]
+    }
+]
