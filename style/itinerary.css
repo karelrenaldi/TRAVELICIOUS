@@ -7,61 +7,97 @@
 
 body {
   height: 100vh;
-  background-color: navajowhite;
+  background-image: url(../img/oxana-v-qoAIlAmLJBU-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: grid;
   justify-items: center;
   align-content: start;
-  font-family: "Pangolin"; }
+  font-family: "Josefin Sans", san-serif; }
 
-input[type="text"], input[type="date"], button[type="submit"], textarea {
+input[type="text"], input[type="time"], button[type="submit"], textarea {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-color: #262626;
+  background-color: #f4e04d;
   border-radius: 4px;
-  color: aliceblue;
+  color: #262626;
   border: none; }
 
 input[type="text"] {
   grid-area: text-input;
   text-align: center; }
 
-input[type="date"] {
-  grid-area: date;
+input[type="time"] {
+  grid-area: time;
   min-height: 2rem;
   text-transform: uppercase; }
 
 button[type="submit"] {
   grid-area: submit;
-  padding: 0.4em 0;
+  cursor: pointer;
+  transform: translateY(0.7em);
+  justify-self: center;
+  border-radius: 50%;
+  width: 4.4em;
+  height: 4.4em;
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.25); }
+
+button.screenshot {
+  border: none;
+  justify-self: center;
+  padding: 1em;
+  border-radius: 10px;
+  background-color: #f4e04d;
+  color: darkslategray;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   cursor: pointer; }
 
 textarea {
   grid-area: notes;
-  min-height: 3rem;
+  min-height: 5.5rem;
   text-align: center; }
 
 .itinerary-list {
   display: grid;
-  grid-template-rows: 2rem 7.6rem auto;
-  grid-gap: 1em;
-  padding: 1em;
-  min-height: 100vh; }
+  grid-template-rows: auto 1fr;
+  grid-gap: 2em;
+  padding: 1em 0.3em;
+  min-height: 100vh;
+  width: 95vw; }
 
 .itinerary-list h1 {
   text-align: center;
-  color: #262626; }
+  color: #fff591;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 700; }
+
+.itinerary-list .main-itinerary {
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+  background: #20405198;
+  background-position: center;
+  background-size: cover;
+  height: 35vh;
+  display: grid;
+  grid-template-rows: 8vh 1fr;
+  align-items: center;
+  padding: 0 0.5em;
+  border-radius: 4px;
+  position: relative; }
 
 .itinerary,
 .itinerary-edit {
   display: grid;
-  grid-template-areas: "date text-input" "notes notes" "submit submit";
+  grid-template-areas: "time text-input" "notes notes" "submit submit";
   grid-gap: 0.3em; }
 
 ul {
   display: grid;
   grid-auto-rows: 4em;
   grid-gap: 0.3em;
-  padding-top: 0.3em;
-  border-top: 3px solid #262626; }
+  padding-top: 0.3em; }
 
 ul li {
   list-style: none;
@@ -100,7 +136,7 @@ li > * {
 
 .modal {
   position: fixed;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 2;
   top: 0;
   left: 0;
@@ -114,29 +150,95 @@ li > * {
   transition: opacity 0.5s; }
 
 .modalInner {
-  border-radius: 4px;
+  border-radius: 15px;
   padding: 1em;
   padding-top: 6em;
-  background: white;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
   position: relative;
   transform: translateY(-100vh);
   transition: all 0.5s;
   min-height: calc(90vh - 100px);
-  min-width: 80vw;
+  min-width: 75vw;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: center; }
+  align-items: center;
+  background-color: #f0f0f0;
+  position: relative; }
+
+.modalInner::before {
+  position: absolute;
+  border-radius: 15px;
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #263336;
+  clip-path: ellipse(99% 32% at 40% 97%);
+  z-index: -100; }
 
 .modalInner h1 + .itinerary-edit {
   margin-top: 1em; }
 
+.modalInner h1 {
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  color: #263336;
+  position: absolute;
+  top: 1.2em; }
+
 .modalInner .itinerary-edit {
-  grid-gap: 1.1em; }
+  position: relative;
+  grid-gap: 1.2em; }
+
+.modalInner .itinerary-edit > * {
+  background-color: #74afbe;
+  font-family: "Anton", sans-serif; }
+
+.modalInner .itinerary-edit #item {
+  text-align: left;
+  padding: 0.5em; }
+
+.modalInner .itinerary-edit #time {
+  padding: 0.8em;
+  min-height: 3rem; }
 
 .modalInner .itinerary-edit textarea {
-  min-height: 5rem; }
+  min-height: 11rem;
+  padding: 0.5em;
+  text-align: left; }
+
+.modalInner .itinerary-edit textarea::placeholder {
+  text-align: left;
+  color: #263336; }
+
+.modalInner .itinerary-edit button {
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: none;
+  width: 35%;
+  border-bottom: #315d68 4px solid;
+  position: relative;
+  overflow: hidden;
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.876rem; }
+
+.modalInner .itinerary-edit button::before {
+  border-radius: 10px;
+  display: inline-block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #26333670;
+  transform: translateY(-100%);
+  transition: transform 0.3s; }
 
 .modalInnerClose {
   position: absolute;
@@ -153,4 +255,7 @@ li > * {
   pointer-events: all; }
 
 .modal.open .modalInner {
+  transform: translateY(0); }
+
+.itinerary-edit button:hover::before {
   transform: translateY(0); }

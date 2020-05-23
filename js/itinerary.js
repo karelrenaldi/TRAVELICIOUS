@@ -1,5 +1,5 @@
 const itineraryForm = document.querySelector(".itinerary");
-const list = itineraryForm.nextElementSibling;
+const list = document.querySelector(".list");
 let items = [];
 
 itineraryForm.addEventListener("submit", (e) => {
@@ -7,10 +7,7 @@ itineraryForm.addEventListener("submit", (e) => {
   const inputs = Array.from(e.currentTarget);
   const item = {
     place: inputs[0].value,
-    dateValue: inputs[1].value,
-    date: new Date(inputs[1].value).getDate(),
-    month: new Date(inputs[1].value).getMonth() + 1,
-    year: new Date(inputs[1].value).getFullYear(),
+    time: inputs[1].value,
     notes: inputs[2].value,
     id: Date.now(),
   };
@@ -26,7 +23,7 @@ function renderItem(e) {
     (item) => `
   <li class="items">
     <div class="items-date">
-      <h3>${item.date}/${item.month}/${item.year}</h3>
+      <h3>${item.time}</h3>
     </div>
     <div class="items-data">
       <h3>${item.place}</h3>

@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Itinerary</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap"
+      href="https://fonts.googleapis.com/css?family=Anton:400,600|Josefin+Sans:300,400,600,700|Nunito:300,400,600,700"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style/itinerary.css" />
   </head>
   <body>
     <div class="itinerary-list">
-      <h1>Today's Itinerary</h1>
-      <form class="itinerary" autocomplete="off">
-        <input
-          type="text"
-          name="item"
-          id="item"
-          placeholder="Place To Visit"
-          required
-        />
-        <input type="date" name="date" id="date" required />
-        <textarea name="text" placeholder="Notes" required></textarea>
-        <button type="submit">Add Itinerary</button>
-      </form>
+      <div class="main-itinerary">
+        <h1>Today's Itinerary</h1>
+        <form class="itinerary" autocomplete="off">
+          <input
+            type="text"
+            name="item"
+            id="item"
+            placeholder="Place To Visit"
+            required
+          />
+          <!-- <input type="date" name="date" id="date" required /> -->
+          <input type="time" name="time" id="time" required />
+          <textarea name="text" placeholder="Notes" required></textarea>
+          <button type="submit">➕</button>
+        </form>
+      </div>
       <ul class="list"></ul>
+      <button class="screenshot">ScreenShot</button>
     </div>
 
     <div class="modal">
@@ -40,14 +44,16 @@
             placeholder="Place To Visit"
             required
           />
-          <input type="date" name="date" id="date" required />
+          <input type="time" name="time" id="time" required />
           <textarea name="text" placeholder="Notes" required></textarea>
           <button type="submit">Edit</button>
           <h3></h3>
         </form>
       </div>
     </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="./js/itinerary.js"></script>
     <script src="./js/itinerary-modal.js"></script>
+    <script src="./js/screenshot.js"></script>
   </body>
 </html>

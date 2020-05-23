@@ -8,10 +8,10 @@ const textInfo = modalInner.querySelector('h3');
 function openModal(idEdit){
     const dataEdit = items.find(item => item.id === idEdit);
     const inputText = itineraryEdit.querySelector(`input[type="text"]`);
-    const inputDate = itineraryEdit.querySelector(`input[type="date"]`);
+    const inputTime = itineraryEdit.querySelector(`input[type="time"]`);
     const inputNotes = itineraryEdit.querySelector(`textarea`);
     // Set input to default
-    [inputText.value, inputDate.value, inputNotes.value] = [dataEdit.place, dataEdit.dateValue, dataEdit.notes];
+    [inputText.value, inputTime.value, inputNotes.value] = [dataEdit.place, dataEdit.time, dataEdit.notes];
     // Open modal
     modal.classList.add("open");
     // Close event listener
@@ -22,13 +22,10 @@ function openModal(idEdit){
     itineraryEdit.addEventListener("submit",(e)=>{
         e.preventDefault();
         dataEdit.place = inputText.value;
-        dataEdit.dateValue = inputDate.value;
-        dataEdit.date = new Date(inputDate.value).getDate();
-        dataEdit.month = new Date(inputDate.value).getMonth() + 1;
-        dataEdit.year = new Date(inputDate.value).getFullYear();
+        dataEdit.time = inputTime.value;
         dataEdit.notes = inputNotes.value;
         list.dispatchEvent(new CustomEvent("updateItems"));
-        textInfo.textContent = `EDITED`;
+        modal.classList.remove("open");
     })
 }
 
