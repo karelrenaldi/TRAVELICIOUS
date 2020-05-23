@@ -1,7 +1,7 @@
 @import './variable';
 @import './mixin';
 
-.header,.map{
+.header{
     @include flex_center(column);
 }
 
@@ -17,6 +17,9 @@
 }
 
 #world-map{
+    @include flex_center(column);
+    @include setup_size(100%,100%);
+    position: absolute;
     width : 100%;
     z-index: 0;
 }
@@ -49,7 +52,7 @@
     padding : 5%;
     position: absolute; 
     border-radius: 16px;
-    background-color: $p_color3;
+    background-color: $p_color1;
     z-index: 2;
     transition: transform 1s;
     .cross{
@@ -70,6 +73,12 @@
             @include setup_size(100%,25%);
             font-size : 16px;
             font-weight: 1000;
+            font-family: Argesta;
+        }
+        .failed{
+            height: 100%;
+            color : $a_red;
+            font-family: Argesta;
         }
         .button-container{
             @include setup_size(100%,75%);
@@ -139,18 +148,24 @@
             }
             .spot-text{
                 @include setup_size(100%,40%);
+                font-size : 12px;
                 background-color: #f3f3f3;
                 padding : 10px;
                 overflow : hidden;
             }
         }
         .gallery{
-            @include setup_size(100%,20%);
+            height: 20%;
+            width: auto;
             padding : 0;
+            white-space: nowrap;
+            overflow-y: hidden;
+            overflow-x: scroll;
             .card{
-                @include setup_size(48%,100%);  
+                @include setup_size(35%,100%);
+                display: inline-block; 
+                white-space: nowrap;
                 margin : 1%;
-                float : left;
                 position: relative;
                 .card-img{
                     @include setup_size(100%,100%);
@@ -167,6 +182,7 @@
                     color : white;
                     text-align: center;
                     @include center_text();
+                    white-space: normal;
                 }
             }
             .active{

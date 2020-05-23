@@ -12,26 +12,43 @@
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script type="text/babel" src="js/amchart.js"></script>
+
     <script type="text/javascript">
         var selected = 'none';
     </script>
     <script type="text/javascript" src="js/data.js"></script>
-    <script type="text/babel" src="js/map.js"></script>
     <script type="text/javascript" src="js/modalHandler.js"></script>
     <script type="text/babel" src="component/BlogWindow.js"></script>
     <script type="text/babel" src="component/InfoWindow.js"></script>
-    <script type="text/babel" src="component/Map.js"></script>
     <script type="text/babel" src="component/Form.js"></script>
 </head>
 <body>
+    <div class="navbar">
+        <div class="link">
+            <a href="map.html">MAP</a>
+        </div>
+        <div class="link">
+            <a href="itinerary.html">ITINERARY</a>
+        </div>
+    </div>
     <div class="container">
-        <div id="app"></div>
+        <div id="world-map"></div>
         <div class="info">
             <div class = "infoDrop" onclick ="removeModal('info')"></div>
             <div class = "infoWindow">
                 
             </div>
+        </div>
+        <div class="footer">
+            <img src="img\index\footer.png" alt="footer">
+        </div>
+        <div class="header">
+            <img src="img\index\header.png" alt="header">
         </div>
     </div>
 </body>

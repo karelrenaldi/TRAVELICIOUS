@@ -2,7 +2,8 @@
 @import './mixin';
 
 
-@font-face { font-family: Janda; src: url('JandaManateeSolid.ttf'); }
+@font-face { font-family: Argesta; src: url('ArgestaDisplay.otf'); }
+@font-face { font-family: Archia; src: url('Archia.otf'); }
 
 #app{
     @include setup_size(100%,100%);
@@ -19,16 +20,17 @@ div{
 
 body{
     @include setup_size(100vw, 100vh);
+    @include flex_center(column);
     box-sizing: border-box;
-    padding : 5vh 10vw;
     overflow: hidden;
-    font-family: "Janda";
+    font-family: "Archia";
 }
 
 .container{
     @include setup_size(100%,100%);
     @include flex_center(column);
     overflow: hidden;
+    padding : 5vh 10vw;
 }
 
 .button{
@@ -37,6 +39,67 @@ body{
     font-weight: 500;
     font-size: 0.5rem;
     text-transform: uppercase;
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: $p_color1;
+    letter-spacing: 0.5px;
+    @include create_shadow(2.5px, 2.5px, 5px);
+}
+
+.footer,.header{
+    @include setup_size(100%, 20%);
+    position: absolute;
+    background-color: transparent;
+    img{
+        @include setup_size(100%, 100%);
+        object-fit: cover;
+    }
+}
+
+.footer{
+    bottom : 0;
+}
+
+.header{
+    top : 0;
+}
+
+.navbar{
+    @include setup_size(80%, 10%);
+    @include flex_center(row);
+    position: absolute;
+    border-radius: 32px;
+    bottom : 10%;
+    z-index: 2;
+    .link{
+        @include setup_size(50%, 100%);
+        @include flex_center(column);
+        background-color: $p_color1;
+        a{
+            @include reset_text();
+            background-color: transparent;
+            border : none;
+        }
+        &hover{
+            cursor: pointer;
+        }
+    }
+    :first-child{
+        border-radius: 32px 0 0 32px;
+        border-right: 1px solid;
+    }
+    :nth-child(2){
+        border-radius: 0px 32px 32px 0px;
+    }
+}
+
+.home{
+    @include setup_size(10vw, 10vw);
+    background-color: $p_color1b;
+    border-radius: 50%;
+    position: absolute;
+    top : 5vh;
+    left : 5vw;
+    img{
+        @include setup_size(100%,100%);
+    }
 }
