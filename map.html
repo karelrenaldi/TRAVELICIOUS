@@ -26,29 +26,21 @@
     <script type="text/babel" src="component/BlogWindow.js"></script>
     <script type="text/babel" src="component/InfoWindow.js"></script>
     <script type="text/babel" src="component/Form.js"></script>
+    <script type="text/babel" src="component/Navigation.js"></script>
+    <script type="text/babel" src="component/Index.js"></script>
 </head>
 <body>
-    <div class="navbar">
-        <div class="link">
-            <a href="map.html">MAP</a>
-        </div>
-        <div class="link">
-            <a href="itinerary.html">ITINERARY</a>
-        </div>
-    </div>
     <div class="container">
+        <div id="navigator">
+            <script type="text/babel">
+                ReactDOM.render(<Navigating page="map" home={false}/>,document.getElementById('navigator'));
+            </script>
+        </div>
         <div id="world-map"></div>
         <div class="info">
             <div class = "infoDrop" onclick ="removeModal('info')"></div>
             <div class = "infoWindow">
-                
             </div>
-        </div>
-        <div class="footer">
-            <img src="img\index\footer.png" alt="footer">
-        </div>
-        <div class="header">
-            <img src="img\index\header.png" alt="header">
         </div>
     </div>
 </body>

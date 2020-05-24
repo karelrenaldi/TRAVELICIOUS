@@ -1,20 +1,16 @@
 am4core.ready(function() {
-    // Themes begin
     am4core.useTheme(am4themes_animated);
-    // Themes end
-
     /* Create map instance */
     var chart = am4core.create("world-map", am4maps.MapChart);
 
     /* Set map definition */
     chart.geodata = am4geodata_worldLow;
-
     /* Set projection */
     chart.projection = new am4maps.projections.Miller();
-
+    
     /* Create map polygon series */
     var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
-
+    
     /* Make map load polygon (like country names) data from GeoJSON */
     polygonSeries.useGeodata = true;
 
@@ -60,6 +56,10 @@ am4core.ready(function() {
 
     // Hide Antarctica
     polygonSeries.exclude = ["AQ"];
+
+    // Add some data
+    polygonSeries.data = countryData;
+    polygonTemplate.propertyFields.fill = "fill";
 
     // Small map
     chart.smallMap = new am4maps.SmallMap();

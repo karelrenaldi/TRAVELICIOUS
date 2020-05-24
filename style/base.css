@@ -8,7 +8,26 @@
 
 #app {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  z-index: 1; }
+
+#navigator, #backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+#navigator nav, #backdrop nav {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  bottom: 10%; }
 
 * {
   margin: 0;
@@ -20,10 +39,6 @@ div {
 body {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   box-sizing: border-box;
   overflow: hidden;
   font-family: "Archia"; }
@@ -48,10 +63,17 @@ body {
   font-weight: 500;
   font-size: 0.5rem;
   text-transform: uppercase;
-  border-radius: 8px;
+  border-radius: 16px;
   background-color: #f6fafb;
   letter-spacing: 0.5px;
-  box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1); }
+  box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
+  box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.1);
+  transition: all 0.3s ease; }
+
+.button:hover {
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: inset 0px 0px 10px rgba(50, 50, 50, 0.2); }
 
 .footer, .header {
   width: 100%;
@@ -70,52 +92,37 @@ body {
 .header {
   top: 0; }
 
-.navbar {
-  width: 80%;
-  height: 10%;
+.home {
+  width: 15vw;
+  height: 15vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  position: absolute;
-  border-radius: 32px;
-  bottom: 10%;
-  z-index: 2; }
-
-.navbar .link {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #f6fafb; }
-
-.navbar .link a {
-  color: black;
-  text-decoration: none;
-  background-color: transparent;
-  border: none; }
-
-.navbar .linkhover {
-  cursor: pointer; }
-
-.navbar :first-child {
-  border-radius: 32px 0 0 32px;
-  border-right: 1px solid; }
-
-.navbar :nth-child(2) {
-  border-radius: 0px 32px 32px 0px; }
-
-.home {
-  width: 10vw;
-  height: 10vw;
-  background-color: #d1d1d1;
+  box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
+  box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.25);
+  background-color: #f6fafb;
   border-radius: 50%;
   position: absolute;
   top: 5vh;
-  left: 5vw; }
+  left: 5vw;
+  transition: all 0.3s ease; }
 
 .home img {
-  width: 100%;
-  height: 100%; }
+  width: 50%;
+  height: 50%; }
+
+.home:hover {
+  cursor: pointer;
+  box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.5); }
+
+@media only screen and (min-width: 1080px) {
+  .button {
+    box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.1);
+    box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.1);
+    font-size: 1rem; }
+  .button:hover {
+    font-size: 1.5rem; }
+  .home {
+    width: 10vh;
+    height: 10vh; } }
