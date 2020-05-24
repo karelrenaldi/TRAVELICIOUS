@@ -1,16 +1,6 @@
 @import './variable';
 @import './mixin';
 
-.header{
-    @include flex_center(column);
-}
-
-.header{
-    @include setup_size(100%, 10%);
-    text-align: center;
-    font-size: 0.5rem;
-}
-
 .map{
     @include setup_size(100%, 80%);
     padding : 10% 0;
@@ -18,7 +8,7 @@
 
 #world-map{
     @include flex_center(column);
-    @include setup_size(100%,60%);
+    @include setup_size(100%,100%);
     position: absolute;
     width : 100%;
     z-index: 0;
@@ -205,11 +195,6 @@
     .infoDrop{
         filter : opacity(0.5);
     }
-}
-
-.footer{
-    @include setup_size(100%, 10%);
-    a{@include reset_text()};
 }
 
 @keyframes completeBlog{

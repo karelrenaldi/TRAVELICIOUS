@@ -124,6 +124,7 @@ body {
   height: 20%;
   position: absolute;
   background-color: transparent;
+  z-index: -100;
 }
 
 .footer img, .header img {
