@@ -102,7 +102,7 @@ body {
   font-size: 0.5rem;
   text-transform: uppercase;
   border-radius: 16px;
-  background-color: #F6FAFB;
+  background-color: #f6fafb;
   letter-spacing: 0.5px;
   -webkit-box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
           box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
@@ -161,7 +161,7 @@ body {
           box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
   -webkit-box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.25);
           box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.25);
-  background-color: #F6FAFB;
+  background-color: #f6fafb;
   border-radius: 50%;
   position: absolute;
   top: 5vh;

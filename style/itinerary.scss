@@ -3,10 +3,11 @@ $font-dancingScript: "Dancing Script", cursive;
 $font-josefinSans: "Josefin Sans", san-serif;
 $font-anton: "Anton", sans-serif;
 
-$color-black: #263336;
-$color-blue: #74afbe;
-$color-white: #f6fafb;
-$color-pink: #fdeff4;
+$p_color1: #f6fafb;
+$p_color1b: #d1d1d1;
+$p_color2: #74afbe;
+$p_color3: #263336;
+$p_color4: #fdeff4;
 
 *,
 *::before,
@@ -16,28 +17,31 @@ $color-pink: #fdeff4;
   padding: 0;
 }
 body {
-  height: 100vh;
-  background-image: url(../img/oxana-v-qoAIlAmLJBU-unsplash.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  min-height: 100vh;
+  background: $p_color1;
   display: grid;
   justify-items: center;
   align-content: start;
   font-family: $font-josefinSans;
 }
 %inputBase {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-color: #f4e04d;
+  font-family: $font-anton;
+  background-color: #263336;
   border-radius: 4px;
-  color: #262626;
+  color: $p_color1b;
   border: none;
+  font-size: 0.92rem;
+  padding: 0.7em 0.5em;
+  outline: none;
 }
 
 // input style
 input[type="text"] {
   grid-area: text-input;
-  text-align: center;
+  padding: 0.3em 0.5em;
+  &::placeholder {
+    text-align: center;
+  }
   @extend %inputBase;
 }
 input[type="time"] {
@@ -51,51 +55,61 @@ button {
     grid-area: submit;
     cursor: pointer;
     @extend %inputBase;
-    transform: translateY(0.7em);
+    transform: translateY(0.1em);
     justify-self: center;
     border-radius: 50%;
     width: 4.4em;
     height: 4.4em;
-    box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 26px 37px -26px rgba(0, 0, 0, 0.75);
   }
   &.screenshot {
     border: none;
     justify-self: center;
-    padding: 1em;
-    border-radius: 10px;
-    background-color: #f4e04d;
-    color: darkslategray;
+    width: 2.3em;
+    height: 2.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $p_color3;
+    color: $p_color1b;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     cursor: pointer;
+    position: fixed;
+    bottom: 2%;
+    left: 3%;
+    font-size: 1.5rem;
   }
 }
 
 textarea {
   grid-area: notes;
   min-height: 5.5rem;
-  text-align: center;
+  &::placeholder {
+    text-align: center;
+  }
   @extend %inputBase;
 }
 
 .itinerary-list {
   display: grid;
   grid-template-rows: auto 1fr;
-  grid-gap: 2em;
-  padding: 1em 0.3em;
+  grid-gap: 2.5em;
+  padding: 1.3em 0.3em;
   min-height: 100vh;
   width: 95vw;
   h1 {
     text-align: center;
-    color: #fff591;
+    color: $p_color3;
     text-transform: uppercase;
     font-size: 1.3rem;
     font-weight: 700;
   }
   .main-itinerary {
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
-    background: #20405198;
+    box-shadow: 0px 26px 37px -26px rgba(0, 0, 0, 0.75);
+    background: $p_color2;
     background-position: center;
     background-size: cover;
     height: 35vh;
@@ -103,7 +117,7 @@ textarea {
     grid-template-rows: 8vh 1fr;
     align-items: center;
     padding: 0 0.5em;
-    border-radius: 4px;
+    border-radius: 14px;
     position: relative;
   }
 }
@@ -115,24 +129,27 @@ textarea {
     "time text-input"
     "notes notes"
     "submit submit";
-  grid-gap: 0.3em;
+  grid-gap: 0.4em;
 }
 
 ul {
+  min-height: 30vh;
   display: grid;
-  grid-auto-rows: 4em;
+  grid-auto-rows: 3.4em;
   grid-gap: 0.3em;
-  padding-top: 0.3em;
+  padding: 0.5em;
   li {
     list-style: none;
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 0.7em;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 0.4em;
+    text-align: center;
   }
 }
 
 li {
   .items-data {
+    border-radius: 10px;
     position: relative;
     .delete {
       position: absolute;
@@ -150,15 +167,17 @@ li {
     }
   }
   .items-date {
+    border-radius: 10px;
     display: flex;
+    justify-content: center;
     align-items: center;
     h3 {
       font-size: 0.95rem;
     }
   }
   & > * {
-    background-color: #262626;
-    color: aliceblue;
+    background-color: $p_color3;
+    color: $p_color1b;
     padding: 0.3em 0.3em;
   }
 }
@@ -178,6 +197,7 @@ li {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.5s;
+  // Modal Inner
   &Inner {
     border-radius: 15px;
     padding: 1em;
@@ -187,7 +207,7 @@ li {
     transform: translateY(-100vh);
     transition: all 0.5s;
     min-height: calc(90vh - 100px);
-    min-width: 75vw;
+    width: 95vw;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -203,7 +223,7 @@ li {
       top: 0;
       right: 0;
       bottom: 0;
-      background-color: $color-black;
+      background-color: $p_color3;
       clip-path: ellipse(99% 32% at 40% 97%);
       z-index: -100;
     }
@@ -213,7 +233,7 @@ li {
     h1 {
       font-family: $font-anton;
       text-transform: uppercase;
-      color: $color-black;
+      color: $p_color3;
       position: absolute;
       top: 1.2em;
     }
@@ -221,12 +241,15 @@ li {
       position: relative;
       grid-gap: 1.2em;
       & > * {
-        background-color: $color-blue;
+        background-color: $p_color2;
         font-family: $font-anton;
+        color: #262626;
       }
       #item {
         text-align: left;
         padding: 0.5em;
+        width: 70%;
+        justify-self: end;
       }
       #time {
         padding: 0.8em;
@@ -238,7 +261,7 @@ li {
         text-align: left;
         &::placeholder {
           text-align: left;
-          color: $color-black;
+          color: $p_color3;
         }
       }
       button {
@@ -246,14 +269,13 @@ li {
         display: inline-block;
         box-shadow: none;
         width: 35%;
-        border-bottom: darken($color-blue, $amount: 30%) 4px solid;
+        border-bottom: darken($p_color2, $amount: 30%) 4px solid;
         position: relative;
         overflow: hidden;
         font-family: $font-anton;
         text-transform: uppercase;
         letter-spacing: 1px;
         font-size: 0.876rem;
-        // transform: translateY(200%);
         &::before {
           border-radius: 10px;
           display: inline-block;
