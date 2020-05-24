@@ -15,24 +15,25 @@ class InfoWindow extends React.Component{
     }
 
     render(){
-        let brief = countryData.filter(countrySet=> countrySet.country==this.props.country)[0]
+        let countryFound = countryList.includes(this.props.country);
+        let brief = countryData.filter(countrySet=> countrySet.name==this.props.country)[0];
         let data = {
             "country" : this.props.country
         }
-        if(brief!=undefined){
+        if(countryFound){
             data = {
-                "country" : brief.country,
-                "code" : brief.code,
+                "country" : brief.name,
+                "id" : brief.id,
                 "desc" : brief.desc,
-                "place" : place.filter(country => country.country == brief.country)[0].place,
-                "food" : food.filter(country => country.country == brief.country)[0].food
+                "place" : place.filter(country => country.country == brief.name)[0].place,
+                "food" : food.filter(country => country.country == brief.name)[0].food
             }
         }
         if(this.state.mode == 'index'){
             return(
                 <React.Fragment>
                     <InfoContainer
-                        valid = {brief==undefined?false:true}
+                        valid = {countryFound?true:false}
                         country = {this.props.country}
                         mode = {this.state.mode}
                         onClick = {this.changeMode}
@@ -40,7 +41,7 @@ class InfoWindow extends React.Component{
                 </React.Fragment>
             )
         }else{
-            if(brief!=undefined){
+            if(countryFound){
                 return(
                     <React.Fragment>
                         <InfoContainer

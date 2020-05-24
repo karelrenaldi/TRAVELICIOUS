@@ -1,9 +1,11 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 body {
   height: 100vh;
@@ -11,40 +13,57 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: -ms-grid;
   display: grid;
   justify-items: center;
-  align-content: start;
-  font-family: "Josefin Sans", san-serif; }
+  -ms-flex-line-pack: start;
+      align-content: start;
+  font-family: "Josefin Sans", san-serif;
+}
 
 input[type="text"], input[type="time"], button[type="submit"], textarea {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background-color: #f4e04d;
   border-radius: 4px;
   color: #262626;
-  border: none; }
+  border: none;
+}
 
 input[type="text"] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
   grid-area: text-input;
-  text-align: center; }
+  text-align: center;
+}
 
 input[type="time"] {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: time;
   min-height: 2rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 button[type="submit"] {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: submit;
   cursor: pointer;
-  transform: translateY(0.7em);
-  justify-self: center;
+  -webkit-transform: translateY(0.7em);
+          transform: translateY(0.7em);
+      justify-self: center;
   border-radius: 50%;
   width: 4.4em;
   height: 4.4em;
-  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.25); }
+  -webkit-box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.25);
+}
 
 button.screenshot {
   border: none;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   padding: 1em;
   border-radius: 10px;
   background-color: #f4e04d;
@@ -52,87 +71,119 @@ button.screenshot {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 textarea {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: notes;
   min-height: 5.5rem;
-  text-align: center; }
+  text-align: center;
+}
 
 .itinerary-list {
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: auto 1fr;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
   grid-gap: 2em;
   padding: 1em 0.3em;
   min-height: 100vh;
-  width: 95vw; }
+  width: 95vw;
+}
 
 .itinerary-list h1 {
   text-align: center;
   color: #fff591;
   text-transform: uppercase;
   font-size: 1.3rem;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 .itinerary-list .main-itinerary {
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
   background: #20405198;
   background-position: center;
   background-size: cover;
   height: 35vh;
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: 8vh 1fr;
-  align-items: center;
+  -ms-grid-rows: 8vh 1fr;
+      grid-template-rows: 8vh 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 0.5em;
   border-radius: 4px;
-  position: relative; }
+  position: relative;
+}
 
 .itinerary,
 .itinerary-edit {
+  display: -ms-grid;
   display: grid;
-  grid-template-areas: "time text-input" "notes notes" "submit submit";
-  grid-gap: 0.3em; }
+      grid-template-areas: "time text-input" "notes notes" "submit submit";
+  grid-gap: 0.3em;
+}
 
 ul {
+  display: -ms-grid;
   display: grid;
   grid-auto-rows: 4em;
   grid-gap: 0.3em;
-  padding-top: 0.3em; }
+  padding-top: 0.3em;
+}
 
 ul li {
   list-style: none;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-gap: 0.7em; }
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 0.7em;
+}
 
 li .items-data {
-  position: relative; }
+  position: relative;
+}
 
 li .items-data .delete {
   position: absolute;
   font-size: 0.7rem;
   top: 3px;
   right: 4px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 li .items-data .edit {
   position: absolute;
   font-size: 0.7rem;
   top: 20px;
   right: 4px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 li .items-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
 li .items-date h3 {
-  font-size: 0.95rem; }
+  font-size: 0.95rem;
+}
 
 li > * {
   background-color: #262626;
   color: aliceblue;
-  padding: 0.3em 0.3em; }
+  padding: 0.3em 0.3em;
+}
 
 .modal {
   position: fixed;
@@ -142,29 +193,47 @@ li > * {
   left: 0;
   right: 0;
   bottom: 0;
+  display: -ms-grid;
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.5s; }
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
 
 .modalInner {
   border-radius: 15px;
   padding: 1em;
   padding-top: 6em;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
   position: relative;
-  transform: translateY(-100vh);
+  -webkit-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   min-height: calc(90vh - 100px);
   min-width: 75vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #f0f0f0;
-  position: relative; }
+  position: relative;
+}
 
 .modalInner::before {
   position: absolute;
@@ -176,48 +245,74 @@ li > * {
   right: 0;
   bottom: 0;
   background-color: #263336;
-  clip-path: ellipse(99% 32% at 40% 97%);
-  z-index: -100; }
+  -webkit-clip-path: ellipse(99% 32% at 40% 97%);
+          clip-path: ellipse(99% 32% at 40% 97%);
+  z-index: -100;
+}
 
 .modalInner h1 + .itinerary-edit {
-  margin-top: 1em; }
+  margin-top: 1em;
+}
 
 .modalInner h1 {
   font-family: "Anton", sans-serif;
   text-transform: uppercase;
   color: #263336;
   position: absolute;
-  top: 1.2em; }
+  top: 1.2em;
+}
 
 .modalInner .itinerary-edit {
   position: relative;
-  grid-gap: 1.2em; }
+  grid-gap: 1.2em;
+}
 
 .modalInner .itinerary-edit > * {
   background-color: #74afbe;
-  font-family: "Anton", sans-serif; }
+  font-family: "Anton", sans-serif;
+}
 
 .modalInner .itinerary-edit #item {
   text-align: left;
-  padding: 0.5em; }
+  padding: 0.5em;
+}
 
 .modalInner .itinerary-edit #time {
   padding: 0.8em;
-  min-height: 3rem; }
+  min-height: 3rem;
+}
 
 .modalInner .itinerary-edit textarea {
   min-height: 11rem;
   padding: 0.5em;
-  text-align: left; }
+  text-align: left;
+}
+
+.modalInner .itinerary-edit textarea::-webkit-input-placeholder {
+  text-align: left;
+  color: #263336;
+}
+
+.modalInner .itinerary-edit textarea:-ms-input-placeholder {
+  text-align: left;
+  color: #263336;
+}
+
+.modalInner .itinerary-edit textarea::-ms-input-placeholder {
+  text-align: left;
+  color: #263336;
+}
 
 .modalInner .itinerary-edit textarea::placeholder {
   text-align: left;
-  color: #263336; }
+  color: #263336;
+}
 
 .modalInner .itinerary-edit button {
   border-radius: 10px;
   display: inline-block;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   width: 35%;
   border-bottom: #315d68 4px solid;
   position: relative;
@@ -225,7 +320,8 @@ li > * {
   font-family: "Anton", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.876rem; }
+  font-size: 0.876rem;
+}
 
 .modalInner .itinerary-edit button::before {
   border-radius: 10px;
@@ -237,25 +333,38 @@ li > * {
   right: 0;
   bottom: 0;
   background-color: #26333670;
-  transform: translateY(-100%);
-  transition: transform 0.3s; }
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
 
 .modalInnerClose {
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 1.2rem;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .modalInner h3 {
-  text-align: center; }
+  text-align: center;
+}
 
 .modal.open {
   opacity: 1;
-  pointer-events: all; }
+  pointer-events: all;
+}
 
 .modal.open .modalInner {
-  transform: translateY(0); }
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
 
 .itinerary-edit button:hover::before {
-  transform: translateY(0); }
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+/*# sourceMappingURL=itinerary.css.map */

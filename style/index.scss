@@ -32,5 +32,23 @@
 .half{
     @include setup_size(50%,100%);
     @include reset_text();
+    border-radius: 16px;
     padding : 0.25em;
+}
+
+@media only screen and (min-width : 1080px) {
+    .title{
+        font-size : 5rem;
+    }
+    .desc{
+        font-size: 2rem;
+    }
+    .buttonContainer{
+        height: 30%;
+        flex-direction: column;
+    }
+    .half{
+        height: 50%;
+        margin-top : 10px;
+    }
 }

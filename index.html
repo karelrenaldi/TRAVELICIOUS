@@ -25,7 +25,16 @@
   </head>
   <body>
     <div class="container">
-      <div id="app"></div>
+      <div id="backdrop">
+          <script type="text/babel">
+            ReactDOM.render(<Backdrop/>,document.getElementById('backdrop'));
+          </script>
+      </div>
+      <div id="app">
+          <script type="text/babel">
+            ReactDOM.render(<Index/>,document.getElementById('app'));
+          </script>
+      </div>
     </div>
   </body>
 </html>

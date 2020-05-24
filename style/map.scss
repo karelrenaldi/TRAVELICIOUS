@@ -18,7 +18,7 @@
 
 #world-map{
     @include flex_center(column);
-    @include setup_size(100%,100%);
+    @include setup_size(100%,60%);
     position: absolute;
     width : 100%;
     z-index: 0;
@@ -30,6 +30,7 @@
     transform: translateY(-100%);
     transition: all 1s;
     position: absolute;
+    z-index: 5;
     top : 0;
     left : 0;
 }
@@ -124,7 +125,6 @@
         animation-duration: 1s;
         .spotlight,.gallery{
             box-sizing: border-box;
-            padding : 2.5% 0;
         }
         .title{
             @include setup_size(100%,10%);
@@ -157,7 +157,7 @@
         .gallery{
             height: 20%;
             width: auto;
-            padding : 0;
+            padding : 5px 0;
             white-space: nowrap;
             overflow-y: hidden;
             overflow-x: scroll;
@@ -183,6 +183,12 @@
                     text-align: center;
                     @include center_text();
                     white-space: normal;
+                }
+                &:hover{
+                    cursor: pointer;
+                    .card-img{
+                        filter: brightness(0.8);
+                    }
                 }
             }
             .active{
@@ -215,5 +221,41 @@
         height : 60vh; opacity: 0;}
     100%{
         opacity : 1;
+    }
+}
+
+@media only screen and (min-width : 1080px) {
+    .infoWindow{
+        .info-container{
+            .country{
+                height : 30%;
+                font-size: 28px;
+            }
+            .button-container{
+                height: 70%;
+            }
+        }
+        .blog-container{
+            .title{
+                font-size: 20px;
+            }
+            .spotlight{
+                @include setup_size(100%,60%);
+                @include flex_center(row);
+                .spot-img,.spot-text{
+                    @include setup_size(50%,100%);
+                }
+                .spot-text{
+                    font-size: 20px;
+                }
+            }
+            .gallery{
+                @include setup_size(100%,30%);
+                padding : 15px 0;
+                .card{
+                    @include setup_size(25%, 100%);
+                }
+            }
+        }
     }
 }

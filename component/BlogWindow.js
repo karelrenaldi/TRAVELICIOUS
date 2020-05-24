@@ -4,15 +4,18 @@ class BlogWindow extends React.Component{
         this.changeSpotlight = this.changeSpotlight.bind(this);
     }
     state={
+        spotKey : "-1",
         spotTitle : "Nasi Goreng",
         spotImg : "default.jpg",
         spotDesc : "lorem ipsum"
     }
-    changeSpotlight(title){
+    changeSpotlight(title, key){
         // console.log(title);
         let target = this.props.data.filter(item=>item.name == title)
+        // console.log(key);
         // console.log(target);
         this.setState({
+            spotKey : key,
             spotTitle : target[0].name,
             spotImg : target[0].img,
             spotDesc : target[0].desc
@@ -28,6 +31,7 @@ class BlogWindow extends React.Component{
                     text = {this.state.spotDesc}
                 />
                 <Gallery
+                    spotKey = {this.state.spotKey}
                     country = {this.props.country}
                     data = {this.props.data}
                     onClick = {this.changeSpotlight}
@@ -42,7 +46,9 @@ class SpotLight extends React.Component{
         return(
             <div className="spotlight">
                 <div className="spot-img">
-                    <img src={`img/${this.props.country}/${this.props.image}`}></img>
+                    <img src={`img/${this.props.country}/${this.props.image}`}>
+
+                    </img>
                 </div>
                 <div className="spot-text">
                     {this.props.text}
@@ -58,7 +64,9 @@ class Gallery extends React.Component{
         this.props.data.map((item, index) =>{
             component.push(
                 <Card
+                    spotKey = {this.props.spotKey}
                     country = {this.props.country}
+                    cardKey = {index}
                     key = {index}
                     image = {item.img}
                     title = {item.name}
@@ -77,9 +85,9 @@ class Gallery extends React.Component{
 class Card extends React.Component{
     render(){
         return(
-            <div className="card" onClick={()=>this.props.onClick(this.props.title)}>
+            <div className={this.props.spotKey==this.props.cardKey? "card active" : "card"} onClick={()=>this.props.onClick(this.props.title, this.props.cardKey)}>
                 <div className="card-img">
-                    <img src={`img/${this.props.country}/${this.props.image}`} alt=""></img>
+                    <img src={`img/${this.props.country}/${this.props.image}`} alt="Something went wrong"></img>
                 </div>
                 <div className="card-title">{this.props.title}</div>
             </div>

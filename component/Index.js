@@ -1,8 +1,8 @@
 class LinkHalf extends React.Component{
     render(){
         return(
-            <a href={this.props.target} class="half">
-                <div class="button">
+            <a href={this.props.target} className="half">
+                <div className="button">
                     {this.props.text}
                 </div>
             </a>
@@ -14,10 +14,10 @@ class Index extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <div class="splashscreen">
-                    <div class="title">TRAVELICIOUS</div>
-                    <div class="desc">YOUR BEST TRAVEL PARTNER</div>
-                    <div class="buttonContainer">
+                <div className="splashscreen">
+                    <div className="title">TRAVELICIOUS</div>
+                    <div className="desc">YOUR BEST TRAVEL PARTNER</div>
+                    <div className="buttonContainer">
                         <LinkHalf target={"map.html"} text={"Explore The World!"}/>
                         <LinkHalf target={"itinerary.html"} text={"Create Your Itinerary!"}/>
                     </div>
@@ -27,30 +27,17 @@ class Index extends React.Component{
     }
 }
 
-class Navigating extends React.Component{
+class Backdrop extends React.Component{
     render(){
-        if(this.props.home){
-            return(
-                <React.Fragment>
-                    <div class="header">
-                        <img src="img\index\header.png" alt="header"></img>
-                    </div>
-                    <div class="footer">
-                        <img src="img\index\footer.png" alt="footer"></img>
-                    </div>
-                </React.Fragment>
-            )
-        }else{
-
-        }
+        return(
+            <React.Fragment>
+                <div className="header">
+                    <img src="img\index\header.png" alt="header"></img>
+                </div>
+                <div className="footer">
+                    <img src="img\index\footer.png" alt="footer"></img>
+                </div>
+            </React.Fragment>
+        )
     }
 }
-
-class HomeButton extends React.Component{
-    render(){
-        <div class="home" onClick={()=>location.href("index.html")}>
-            <img src="img\index\home-solid.svg" alt="home"></img>
-        </div>
-    }
-}
-ReactDOM.render(<Index/>,document.getElementById('app'));
