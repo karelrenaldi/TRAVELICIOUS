@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Itinerary</title>
     <link
-      href="https://fonts.googleapis.com/css?family=Anton:400,600|Josefin+Sans:300,400,600,700|Nunito:300,400,600,700"
+      href="https://fonts.googleapis.com/css?family=Anton:400,500,600|Josefin+Sans:300,400,600,700|Nunito:300,400,600,700"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style/itinerary.css" />
@@ -22,14 +22,13 @@
             placeholder="Place To Visit"
             required
           />
-          <!-- <input type="date" name="date" id="date" required /> -->
           <input type="time" name="time" id="time" required />
           <textarea name="text" placeholder="Notes" required></textarea>
           <button type="submit">➕</button>
         </form>
       </div>
       <ul class="list"></ul>
-      <button class="screenshot">ScreenShot</button>
+      <button class="screenshot">📷</button>
     </div>
 
     <div class="modal">
@@ -46,7 +45,7 @@
           />
           <input type="time" name="time" id="time" required />
           <textarea name="text" placeholder="Notes" required></textarea>
-          <button type="submit">Edit</button>
+          <button type="submit" class="edit-btn">Edit</button>
           <h3></h3>
         </form>
       </div>
