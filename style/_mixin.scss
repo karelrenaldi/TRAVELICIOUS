@@ -21,3 +21,7 @@
     top : 50%;
     transform: translate(-50%,-50%);
 }
+
+@mixin create_shadow($x, $y, $blur){
+    box-shadow: $x $y $blur rgba(50,50,50,0.1);
+}

@@ -79,6 +79,16 @@ const food = [
                 "name" : "Rendang",
                 "desc" : "World number one dish!",
                 "img" : "rendang.jpg"
+            },
+            {
+                "name" : "Nasi Goreng",
+                "desc" : "Indonesian special fried rice with tons of spice in it!",
+                "img" : "nasigoreng.jpg"
+            },
+            {
+                "name" : "Rendang",
+                "desc" : "World number one dish!",
+                "img" : "rendang.jpg"
             }
         ]
     },
