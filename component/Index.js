@@ -15,8 +15,8 @@ class Index extends React.Component{
         return(
             <React.Fragment>
                 <div className="splashscreen">
-                    <div className="title">TRAVELICIOUS</div>
-                    <div className="desc">YOUR BEST TRAVEL PARTNER</div>
+                    <div className="title">TOURTIZING</div>
+                    <div className="desc">MAKE YOUR TOUR APPETIZING</div>
                     <div className="buttonContainer">
                         <LinkHalf target={"map.html"} text={"Explore The World!"}/>
                         <LinkHalf target={"itinerary.html"} text={"Create Your Itinerary!"}/>

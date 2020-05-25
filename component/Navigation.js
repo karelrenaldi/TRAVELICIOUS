@@ -41,7 +41,7 @@ class HomeButton extends React.Component{
 
     render(){
         return(
-            <div className={this.props.page=="itinerary"?"home bottomleft":"home topleft"} onClick={()=>this.backHome()}>
+            <div className="home bottomleft" onClick={()=>this.backHome()}>
                 <img src="img\index\home-solid.svg" alt="home"></img>
             </div>
         )

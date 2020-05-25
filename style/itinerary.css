@@ -1,3 +1,213 @@
+@font-face {
+  font-family: Argesta;
+  src: url("ArgestaDisplay.otf");
+}
+
+@font-face {
+  font-family: Archia;
+  src: url("Archia.otf");
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#navigator, #backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#navigator nav, #backdrop nav {
+  width: 100%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  bottom: 10%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  font-family: "Archia";
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  padding: 5vh 10vw;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: 500;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  border-radius: 16px;
+  background-color: #f6fafb;
+  letter-spacing: 0.5px;
+  -webkit-box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
+          box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
+  -webkit-box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.1);
+          box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.1);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-box-shadow: inset 0px 0px 10px rgba(50, 50, 50, 0.2);
+          box-shadow: inset 0px 0px 10px rgba(50, 50, 50, 0.2);
+}
+
+.footer, .header {
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.footer img, .header img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.footer {
+  bottom: 0;
+}
+
+.header {
+  top: 0;
+}
+
+.home {
+  width: 15vw;
+  height: 15vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
+          box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
+  -webkit-box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.25);
+          box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.25);
+  background-color: #f6fafb;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.home img {
+  width: 50%;
+  height: 50%;
+}
+
+.home:hover {
+  cursor: pointer;
+  -webkit-box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.5);
+          box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.5);
+}
+
+.topleft {
+  top: 5vh;
+  left: 5vw;
+}
+
+.bottomleft {
+  bottom: 5vh;
+  left: 5vw;
+}
+
+@media only screen and (min-width: 1080px) {
+  .button {
+    -webkit-box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.1);
+            box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.1);
+    -webkit-box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.1);
+            box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.1);
+    font-size: 1rem;
+  }
+  .button:hover {
+    font-size: 1.5rem;
+  }
+  .home {
+    width: 10vh;
+    height: 10vh;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -117,6 +327,13 @@ button.screenshot {
   bottom: 5vh;
   right: 5vw;
   font-size: 1.5rem;
+}
+
+@media (min-width: 750px) {
+  button.screenshot {
+    width: 10vh;
+    height: 10vh;
+  }
 }
 
 textarea {

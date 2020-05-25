@@ -13,7 +13,9 @@ const countryList = [
     'England',
     'Ghana',
     'Japan',
-    'India'
+    'India',
+    'Thailand',
+    'Egypt'
 ]
 
 const countryData = [
@@ -46,6 +48,18 @@ const countryData = [
         "name" : "India",
         "fill" : am4core.color("#F05C5C"),
         "desc" : "As the second-most populous country, India has tons of beauty and culture to experience!"
+    },
+    {
+        "id" : "TH",
+        "name" : "Thailand",
+        "fill" : am4core.color("#F05C5C"),
+        "desc" : "It's known for tropical beaches, opulent royal palaces, ancient ruins and ornate temples displaying figures of Buddha."
+    },
+    {
+        "id" : "EG",
+        "name" : "Egypt",
+        "fill" : am4core.color("#F05C5C"),
+        "desc" : "Egypt, a country linking northeast Africa with the Middle East, dates to the time of the pharaohs."
     }
 ];
 
@@ -170,6 +184,66 @@ const place = [
             }
         ]
     },
+    {
+        "country" : "Thailand",
+        "place" : [
+            {
+                "name" : "The Grand Palace",
+                "desc" : "Located adjacent the Chao Phraya River in Bangkok is both the Grand Palace and Wat Phra Kaew. It was built next to the river strategically in order to help defend the palace from possible invasions.",
+                "img" : "place_thegrandpalace.jpg"
+            },
+            {
+                "name" : "Full Moon Party",
+                "desc" : "The infamous party is known for the large crowds of neon painted and bikini-ridden tourists who frequent them, with vibrant buckets of booze in tow to get the party started.",
+                "img" : "place_fullmoonparty.jpg"
+            },
+            {
+                "name" : "Maya Bay",
+                "desc" : "The jury is out as to which is more beautiful: Leonardo DiCaprio or Maya Bay, the secluded beach in Thailand the actor made famous.",
+                "img" : "place_mayabay.jpg"
+            },
+            {
+                "name" : "Wat Arun",
+                "desc" : "Wat Arun is like no other religious structure in the Kingdom. The Buddhist temple sits right along the main artery of the capital: the Chao Phraya River.",
+                "img" : "place_watarun.jpg"
+            },
+            {
+                "name" : "Railay Bay",
+                "desc" : "This particular strip of sand has something for everyone, equipped with rock climbing and even a phallus shrine. In addition, there are some stunning viewpoints worth trekking too, plus a strikingly blue lagoon to explore.",
+                "img" : "place_railaybay.jpg"
+            }
+        ]
+    },
+    {
+        "country" : "Egypt",
+        "place" : [
+            {
+                "name" : "Pyramids of Giza",
+                "desc" : "The last surviving of the Seven Wonders of the Ancient World, the Pyramids of Giza are one of the world's most recognizable landmarks.",
+                "img" : "place_giza.jpg"
+            },
+            {
+                "name" : "Luxor's Karnak Temple",
+                "desc" : "Famed for the Valley of the Kings, Karnak Temple, and the Memorial Temple of Hatshepsut, the Nile-side town of Luxor in Upper Egypt has a glut of tourist attractions.",
+                "img" : "place_luxor.jpg"
+            },
+            {
+                "name" : "Islamic Cairo",
+                "desc" : "The atmospheric, narrow lanes of the capital's Islamic Cairo district are crammed full of mosques, madrassas (Islamic schools of learning), and monuments dating from the Fatimid through to the Mameluke eras.",
+                "img" : "place_islamiccairo.jpg"
+            },
+            {
+                "name" : "Aswan",
+                "desc" : "Egypt's most tranquil town is Aswan, set upon the winding curves of the Nile. Backed by orange-hued dunes, this is the perfect place to stop and unwind for a few days and soak up the chilled-out atmosphere. ",
+                "img" : "place_Aswan.jpg"
+            },
+            {
+                "name" : "White Desert",
+                "desc" : "Egypt's kookiest natural wonder is the White Desert, where surreally shaped chalk mountains have created what looks like a snowy wonderland in the middle of the arid sand.",
+                "img" : "place_whitedesert.jpg"
+            }
+        ]
+    }
 ];
 
 const food = [
@@ -371,4 +445,64 @@ const food = [
             },
         ]
     },
+    {
+        "country" : "Thailand",
+        "food" : [
+            {
+                "name" : "Tom Yum Goong",
+                "desc" : `This dish is a delicate balance of sour, salty, spicy, and sweet, so it’s no wonder that this ranks high in the World’s 50 Best Foods survey!`,
+                "img" : "food_tomyumgoong.jpg"
+            },
+            {
+                "name" : "Pad Thai",
+                "desc" : `These rice noodles are stir-fried with tofu, bean sprouts, eggs, and either shrimp or chicken followed by some other seasonings. If I may add a tip, add a dash of lime juice before digging in!`,
+                "img" : "food_padthai.jpg"
+            },
+            {
+                "name" : "Gaeng Daeng",
+                "desc" : `Select from the usual chicken, beef, pork, or maybe even duck, shrimp, or tofu. Your choice of meat is then cooked in delicious red curry paste and coconut milk.`,
+                "img" : "food_gaengdaeng.jpg"
+            },
+            {
+                "name" : "Khao Phat",
+                "desc" : `this Thai food dish may be simple but it packs a great mix of ingredients and flavors!`,
+                "img" : "food_khaophat.jpg"
+            },
+            {
+                "name" : "Tom Kha Gai",
+                "desc" : `This sweet and tangy soup dish is another safe bet for travelers! If you’re curious, this Thai food dish is made of chicken strips, chili, galangal, lemongrass, shallots, and lime that are cooked in coconut milk for a tasty meal.`,
+                "img" : "food_tomkhagai.jpg"
+            },
+        ]
+    },
+    {
+        "country" : "Egypt",
+        "food" : [
+            {
+                "name" : "Ful Medammes",
+                "desc" : `Ful, pronounced as fool, is made of fava beans cooked with oil and salt. Fava beans (broad beans) are encased in long fat green pods.`,
+                "img" : "food_fulmemades.jpg"
+            },
+            {
+                "name" : "Falafel",
+                "desc" : `Falafel are traditionally served in Egyptian breakfast along with ful, eggs, cheese and pita bread. Traditional falafel is made with chickpeas, but Egyptians ta’meya is made of fava beans.`,
+                "img" : "food_falafel.jpg"
+            },
+            {
+                "name" : "Mahshi",
+                "desc" : `Mahsi – Egyptian stuffed vegetables. Mahshi is a favorite hit amongst Egyptians and great for vegetarian travelers.`,
+                "img" : "food_mahshi.jpg"
+            },
+            {
+                "name" : "Shawarma",
+                "desc" : `Shawarma is such a popular street food that you’ve probably tried it before. Originally, it comes from the famous Greek gyros, but of course, the Egyptians put their twist on it.`,
+                "img" : "food_Shawarma.jpg"
+            },
+            {
+                "name" : "Macaroni Béchamel",
+                "desc" : `Macaroni Béchamel is a classic Egyptian comfort food that will leave you satisfied for a while! Basically, it’s Egypt’s version of lasagna or macaroni and cheese.`,
+                "img" : "food_Macaroni.jpg"
+            },
+        ]
+    }
 ]
