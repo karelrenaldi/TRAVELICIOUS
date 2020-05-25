@@ -124,8 +124,6 @@ body{
     background-color: $p_color1;
     border-radius: 50%;
     position: absolute;
-    top : 5vh;
-    left : 5vw;
     transition: all 0.3s ease;
     z-index: 2;
     img{
@@ -135,6 +133,16 @@ body{
         cursor: pointer;
         @include create_innerShadow(0px, 0px, 5px, 0.5);
     }
+}
+
+.topleft{
+    top : 5vh;
+    left : 5vw;
+}
+
+.bottomleft{
+    bottom : 5vh;
+    left : 5vw;
 }
 
 @media only screen and (min-width : 1080px) {

@@ -165,8 +165,6 @@ body {
   background-color: #f6fafb;
   border-radius: 50%;
   position: absolute;
-  top: 5vh;
-  left: 5vw;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 2;
@@ -181,6 +179,16 @@ body {
   cursor: pointer;
   -webkit-box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.5);
           box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.5);
+}
+
+.topleft {
+  top: 5vh;
+  left: 5vw;
+}
+
+.bottomleft {
+  bottom: 5vh;
+  left: 5vw;
 }
 
 @media only screen and (min-width: 1080px) {

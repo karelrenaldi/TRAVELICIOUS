@@ -3,7 +3,7 @@ class Navigating extends React.Component{
         return(
             <React.Fragment>
                 <Backdrop/>
-                <HomeButton/>
+                <HomeButton page={this.props.page}/>
             </React.Fragment>
         )
     }
@@ -41,7 +41,7 @@ class HomeButton extends React.Component{
 
     render(){
         return(
-            <div className="home" onClick={()=>this.backHome()}>
+            <div className={this.props.page=="itinerary"?"home bottomleft":"home topleft"} onClick={()=>this.backHome()}>
                 <img src="img\index\home-solid.svg" alt="home"></img>
             </div>
         )
