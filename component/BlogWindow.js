@@ -46,12 +46,12 @@ class SpotLight extends React.Component{
         return(
             <div className="spotlight">
                 <div className="spot-img">
-                    <img src={`img/${this.props.country}/${this.props.image}`}>
+                    <img src={this.props.image == 'default.jpg'?`img/default.jpg`:`img/${this.props.country}/${this.props.image}`}>
 
                     </img>
                 </div>
                 <div className="spot-text">
-                    {this.props.text}
+                    {this.props.image == 'default.jpg'?'Here will listed the detail about the card':this.props.text}
                 </div>
             </div>
         )

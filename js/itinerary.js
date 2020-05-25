@@ -2,6 +2,7 @@ const itineraryForm = document.querySelector(".itinerary");
 const list = document.querySelector(".list");
 let items = [];
 
+
 itineraryForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const inputs = Array.from(e.currentTarget);
@@ -34,7 +35,9 @@ function renderItem(e) {
   </li>
   `
   );
-  list.innerHTML = html.join("\n");
+  list.innerHTML = "";
+  list.insertAdjacentHTML('afterbegin','<h1 id="h1">YOUR ITINERARY</h1>');
+  list.insertAdjacentHTML('beforeend', html.join("\n"));
 }
 
 function deleteItems(id) {

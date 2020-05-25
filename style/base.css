@@ -124,7 +124,7 @@ body {
   height: 20%;
   position: absolute;
   background-color: transparent;
-  z-index: -100;
+  z-index: 1;
 }
 
 .footer img, .header img {
@@ -169,6 +169,7 @@ body {
   left: 5vw;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  z-index: 2;
 }
 
 .home img {

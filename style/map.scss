@@ -95,12 +95,14 @@
                 text-align: center;
             }
             &:hover{
+                font-size: 0.75rem;
                 img{
                     filter : brightness(0.8);
                 }
             }
         }
         .active{
+            font-size: 0.75rem;
             img{
                 filter: brightness(0.8);
             }
@@ -169,6 +171,7 @@
                     }
                 }
                 .card-title{
+                    font-size: 0.75rem;
                     color : white;
                     text-align: center;
                     @include center_text();

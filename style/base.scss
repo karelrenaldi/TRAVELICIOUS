@@ -70,7 +70,7 @@ body{
     @include setup_size(100%, 20%);
     position: absolute;
     background-color: transparent;
-    z-index: -100;
+    z-index: 1;
     img{
         @include setup_size(100%, 100%);
         object-fit: cover;
@@ -127,6 +127,7 @@ body{
     top : 5vh;
     left : 5vw;
     transition: all 0.3s ease;
+    z-index: 2;
     img{
         @include setup_size(50%,50%);
     }

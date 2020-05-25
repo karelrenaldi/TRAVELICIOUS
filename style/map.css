@@ -183,9 +183,17 @@
   text-align: center;
 }
 
+.infoWindow .info-container .button:hover {
+  font-size: 0.75rem;
+}
+
 .infoWindow .info-container .button:hover img {
   -webkit-filter: brightness(0.8);
           filter: brightness(0.8);
+}
+
+.infoWindow .info-container .active {
+  font-size: 0.75rem;
 }
 
 .infoWindow .info-container .active img {
@@ -295,6 +303,7 @@
 }
 
 .infoWindow .blog-container .gallery .card .card-title {
+  font-size: 0.75rem;
   color: white;
   text-align: center;
   position: absolute;

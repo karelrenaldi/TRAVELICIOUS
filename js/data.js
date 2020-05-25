@@ -12,7 +12,8 @@ const countryList = [
     'Australia',
     'England',
     'Ghana',
-    'Japan'
+    'Japan',
+    'India'
 ]
 
 const countryData = [
@@ -39,6 +40,12 @@ const countryData = [
         "name" : "America",
         "fill" : am4core.color("#F05C5C"),
         "desc" : "The world's third largest country in size and nearly the third largest in terms of population!"
+    },
+    {
+        "id" : "IN",
+        "name" : "India",
+        "fill" : am4core.color("#F05C5C"),
+        "desc" : "As the second-most populous country, India has tons of beauty and culture to experience!"
     }
 ];
 
@@ -55,6 +62,21 @@ const place = [
                 "name" : "Thousand Island",
                 "desc" : "Thousand island located near Jakarta, as it's name, it has thousand small islands for thousand journey!",
                 "img" : "place_pulauseribu.jpg"
+            },
+            {
+                "name" : "Borobudur Temple",
+                "desc" : "Located on Yogyakarta, Central Java, Borobudur  is a 9th-century Mahayana Buddhist temple in Magelang Regency, not far from the town of Muntilan",
+                "img" : "place_borobudur.jpg",
+            },
+            {
+                "name" : "Raja Ampat",
+                "desc" : "With one of the liveliest underwater scenes on the planet, this world-famous tropical paradise is home to over 530 species of coral, 700 species of mollusk, and 1,300 types of fish.",
+                "img" : "place_rajaampat.jpg",
+            },
+            {
+                "name" : "Mount Bromo",
+                "desc" : "This volcano, often surrounded by smoke and a multi-colored sky, has become one of the most iconic sights from Indonesia. ",
+                "img" : "place_bromo.jpg",
             }
         ]
     },
@@ -72,7 +94,7 @@ const place = [
                 "img" : "place_cologne.jpg"
             },
             {
-                "name" : "Miniatur Wunderland and the Historic Port of Hamburg",
+                "name" : "Miniatur Wunderland",
                 "desc" : "In the heart of the historic Port of Hamburg, the magnificent Miniatur Wunderland, the world's largest model railway, is an attraction that appeals equally to young and old alike.",
                 "img" : "place_port-of-hamburg.jpg"
             },
@@ -92,14 +114,59 @@ const place = [
         "country" : "China",
         "place" : [
             {
-                "name" : "Berlin's Brandenburg Gate",
-                "desc" : "Modeled on the Acropolis in Athens and built for King Frederick William II in 1791, the monumental sandstone Brandenburg Gate in Berlin's Mitte district was the city's first Neoclassical structure",
-                "img" : "place_brandenburg.jpg"
+                "name" : "The Great Wall",
+                "desc" : "One of the iconic symbols of China, the Great Wall is the longest wall in the world, an awe-inspiring feat of ancient defensive architecture.",
+                "img" : "place_greatwall.jpg"
             },
             {
-                "name" : "Cologne Cathedral",
-                "desc" : "located on the banks of the Rhine and is undoubtedly Cologne's most impressive landmark. ",
-                "img" : "place_cologne.jpg"
+                "name" : "Terracotta Army",
+                "desc" : "Located on Xi'an, the Terracotta Army has laid underground for more than 2,000 years.",
+                "img" : "place_terracota.jpg"
+            },
+            {
+                "name" : "Forbidden City",
+                "desc" : "Located on Beijing, it was once a 'palace city' where ordinary people were forbidden entry.",
+                "img" : "place_forbiddencity.jpg"
+            },
+            {
+                "name" : "Yellow Mountains",
+                "desc" : "Located near Shanghai, the Yellow Mountain Scenic Area woos travelers with its five wonders: sun rises, seas of clouds, oddly-shaped rocks, twisted pine trees, and hot springs.",
+                "img" : "place_yellowmountain.jpg"
+            },
+            {
+                "name" : "West Lake",
+                "desc" : "Located on Hangzhou, West Lake was created after the Chinese love for garden-style parks for recreation.",
+                "img" : "place_westlake.jpg"
+            }
+        ]
+    },
+    {
+        "country" : "India",
+        "place" : [
+            {
+                "name" : "Leh-Ladakh",
+                "desc" : "The land of majestic snow-capped mountains, serene alpine glacial lakes, enchanting valleys and ancient colourful Buddhist monasteries, Leh-Ladakh is one of the ‘must-visit’ destinations in India",
+                "img" : "place_leh-ladakh.jpg"
+            },
+            {
+                "name" : "Bir Billing",
+                "desc" : "Comprising of more than ten paragliding spots, Bir Billing is one of those top 10 places to visit in India that has truly lived up to its name of paragliding capital of India.",
+                "img" : "place_bir-billing.jpg"
+            },
+            {
+                "name" : "Udaipur",
+                "desc" : " Udaipur is called the Venice of the East, but the different Rajasthani hues of the city surely make it stand out. The City of Lakes has to be in your list of best places to travel in India.",
+                "img" : "place_udaipur.jpg"
+            },
+            {
+                "name" : "Agra",
+                "desc" : "With tons of famous tourist attraction you can named, this is Agra, the land of Taj",
+                "img" : "place_agra.jpg"
+            },
+            {
+                "name" : "Mathura",
+                "desc" : "Have some interesting historical and spiritual experience here, on the birth place of Lord Krishna",
+                "img" : "place_mathura.jpg"
             }
         ]
     },
@@ -111,14 +178,29 @@ const food = [
         "food" : [
             {
                 "name" : "Nasi Goreng",
-                "desc" : "Indonesian special fried rice with tons of spice in it!",
+                "desc" : "Indonesian Fried Rice and its reputation has taken the world by storm.",
                 "img" : "food_nasigoreng.jpg"
             },
             {
-                "name" : "Rendang",
-                "desc" : "World number one dish!",
+                "name" : "Beef Rendang",
+                "desc" : "This dish originated from Padang, Sumatra. Padang food is famous for its spicyness and richness in flavor. ",
                 "img" : "food_rendang.jpg"
             },
+            {
+                "name" : "Indomie",
+                "desc" : "Cost merely around 25 cents a pack and you get a quick and satisfying snack. It is none other than our very own Indonesian Instant Noodles! ",
+                "img" : "food_indomie.jpg",
+            },
+            {
+                "name" : "Martabak",
+                "desc" : "As one of the most sought after food, Martabak, the Indonesian Pancake is the way too delicious! You can have either the sour version with vegetables and meat filling or the sweet version with chocolate/nuts fillings",
+                "img" : "food_martabak.jpg",
+            },
+            {
+                "name" : "Nasi Rawon",
+                "desc" : "Originated in East Java, this is a dish made of beef stew with deep black soup color and rich taste",
+                "img" : "food_nasirawon.jpg",
+            }
         ]
     },
     {
@@ -133,6 +215,21 @@ const food = [
                 "name" : "Maultaschen",
                 "desc" : "Maultaschen from Swabia are a lot like ravioli but bigger. They are typically palm-sized, square pockets of dough with fillings that run the gamut from savory to sweet and meaty to vegetarian.",
                 "img" : "food_maultaschen.jpg"
+            },
+            {
+                "name" : "Spätzle",
+                "desc" : "Spätzle are a kind of pasta, but the dough only consists of eggs, flour, salt and a hint of sparkling water (in order to fluff up the dough).",
+                "img" : "food_spaetzle.jpg",
+            },
+            {
+                "name" : "Currywurst",
+                "desc" : "Invented in Berlin by Herta Heuwer in 1949 the Currywurst is usually made of a pork sausage either wrapped in ‘Darm’ or without Darm",
+                "img" : "food_currywurst.jpg"
+            },
+            {
+                "name" : "Sauerbraten",
+                "desc" : "Sauerbraten is a dish that you will usually get served when visiting the grand parents or on a special occasion. To prepare a Sauerbraten you will need some high quality piece of beef and a lot of time.",
+                "img" : "food_sauerbraten.jpg"
             }
         ]
     },
@@ -140,14 +237,59 @@ const food = [
         "country" : "China",
         "food" : [
             {
-                "name" : "Königsberger klopse",
-                "desc" : "Named after the former East Prussian capital of Königsberg (now Kaliningrad in Russia), this tasty dish of meatballs in a creamy white sauce with capers is beloved by grandmothers and chefs alike.",
-                "img" : "food_klopse.jpg"
+                "name" : "Sweet & Sour Pork",
+                "desc" : "In China, the pork is lightly fried very rapidly at high heat, then dressed with the sauce",
+                "img" : "food_sweetpork.jpg"
             },
             {
-                "name" : "Maultaschen",
-                "desc" : "Maultaschen from Swabia are a lot like ravioli but bigger. They are typically palm-sized, square pockets of dough with fillings that run the gamut from savory to sweet and meaty to vegetarian.",
-                "img" : "food_maultaschen.jpg"
+                "name" : "Ma Po Tofu",
+                "desc" : "This dish is over 100 years old. A spicy dish of tofu with browned ground beef in a savory sauce topped with green onions, it is blissful on top of a hot mound of rice.",
+                "img" : "food_mapotofu.jpg"
+            },
+            {
+                "name" : "Dumpling",
+                "desc" : "Chinese dumpling, also called Jiaozi, typically consist of a ground meat and/or vegetable filling wrapped into a thinly rolled piece of dough, which is one of the most important and traditional dishes in China",
+                "img" : "food_dumpling.jpg"
+            },
+            {
+                "name" : "Sichuan Shredded Chicken",
+                "desc" : "Known as “you xiang rou si,” this spicy chicken stir-fry is something you won’t see in the states.",
+                "img" : "food_sichuan.jpg"
+            },
+            {
+                "name" : "Chinese barbecue",
+                "desc" : "The smoky, meaty delights you’ll get are out of this world. Whatever you do, don’t miss out on these!",
+                "img" : "food_bbq.jpg"
+            }
+        ]
+    },
+    {
+        "country" : "India",
+        "food" : [
+            {
+                "name" : "Indian Thali",
+                "desc" : "Served on one massive plate, this is one set of food that make you experience the most of Indian foods",
+                "img" : "food_thali.jpg"
+            },
+            {
+                "name" : "Biryani",
+                "desc" : "The basic yellow rice with meats, but it has tons of spice ready to shock your tongue!",
+                "img" : "food_biryani.jpg"
+            },
+            {
+                "name" : "Aloo Paratha",
+                "desc" : "The Indian 'bread' made of aloo (potatoes) served with delicious potato chunks and spices.",
+                "img" : "food_alooparatha.jpg"
+            },
+            {
+                "name" : "Egg Curry",
+                "desc" : "The name says it all, it's egg wrapped in curry sauce, but if it's India, it's nothing like you will experience in any other country.",
+                "img" : "food_eggcurry.jpg"
+            },
+            {
+                "name" : "Masala Dosa",
+                "desc" : "Looks similar to a crepe but it's actually made from rice and beans and then smothered in butter.",
+                "img" : "food_masaladosa.jpg"
             }
         ]
     },

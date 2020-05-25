@@ -66,6 +66,7 @@ am4core.ready(function() {
     // Re-position to top right (it defaults to bottom left)
     chart.smallMap.align = "right";
     chart.smallMap.valign = "top";
+    chart.smallMap.marginTop = "20%";
     chart.smallMap.series.push(polygonSeries);
 
     // Zoom control
@@ -83,5 +84,8 @@ am4core.ready(function() {
     homeButton.marginBottom = 10;
     homeButton.parent = chart.zoomControl;
     homeButton.insertBefore(chart.zoomControl.plusButton);
+
+    chart.zoomControl.align = "left";
+    chart.zoomControl.marginBottom = "20%";
 
 }); // end am4core.ready()
