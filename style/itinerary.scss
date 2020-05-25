@@ -1,5 +1,6 @@
 @import "./variable";
 @import "./mixin";
+@import "./base";
 
 *,
 *::before,
@@ -21,11 +22,11 @@ body {
   display: grid;
   justify-items: center;
   align-content: start;
-  font-family: $font-josefinSans;
+  font-family: "Archia";
 }
 
 %inputBase {
-  font-family: $font-anton;
+  font-family: "Archia";
   background-color: #263336;
   border-radius: 4px;
   color: $p_color1b;
@@ -70,7 +71,7 @@ button {
   &.screenshot {
     border: none;
     justify-self: center;
-    @include setup_size(15vw,15vw);
+    @include setup_size(15vw, 15vw);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,6 +87,9 @@ button {
     bottom: 5vh;
     right: 5vw;
     font-size: 1.5rem;
+    @media (min-width: 750px) {
+      @include setup_size(10vh, 10vh);
+    }
   }
 }
 
@@ -103,7 +107,7 @@ textarea {
   grid-template-rows: auto 1fr;
   grid-gap: 2.5em;
   padding: 1.3em 0.3em;
-  @include setup_size(100%,100%);
+  @include setup_size(100%, 100%);
   z-index: 1;
   @media (min-width: 450px) {
     width: 90vw;

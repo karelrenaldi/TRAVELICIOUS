@@ -1,112 +1,70 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 @media (min-width: 1000px) {
   html {
-    font-size: 16.5px;
-  }
-}
+    font-size: 16.5px; } }
 
 body {
   min-height: 100vh;
   background: #f6fafb;
-  display: -ms-grid;
   display: grid;
   justify-items: center;
-  -ms-flex-line-pack: start;
-      align-content: start;
-  font-family: "Josefin Sans", san-serif;
-}
+  align-content: start;
+  font-family: "Archia"; }
 
 input[type="text"], input[type="time"], button[type="submit"], textarea {
-  font-family: "Anton", sans-serif;
+  font-family: "Archia";
   background-color: #263336;
   border-radius: 4px;
   color: #d1d1d1;
   border: none;
   font-size: 0.92rem;
   padding: 0.7em 0.5em;
-  outline: none;
-}
+  outline: none; }
 
 input[type="text"] {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: text-input;
-  padding: 0.3em 0.5em;
-}
-
-input[type="text"]::-webkit-input-placeholder {
-  text-align: center;
-}
-
-input[type="text"]:-ms-input-placeholder {
-  text-align: center;
-}
-
-input[type="text"]::-ms-input-placeholder {
-  text-align: center;
-}
+  padding: 0.3em 0.5em; }
 
 input[type="text"]::placeholder {
-  text-align: center;
-}
+  text-align: center; }
 
 input[type="time"] {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: time;
   min-height: 2rem;
   text-transform: uppercase;
-  min-width: 6rem;
-}
+  min-width: 6rem; }
 
 button[type="submit"] {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: submit;
   cursor: pointer;
-  -webkit-transform: translateY(-0.3em);
-          transform: translateY(-0.3em);
-      justify-self: center;
+  transform: translateY(-0.3em);
+  justify-self: center;
   border-radius: 50%;
   width: 4.2em;
   height: 4.2em;
-  -webkit-box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
-  background-color: #f6fafb;
-}
+  box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
+  background-color: #f6fafb; }
 
 @media (min-width: 750px) {
   button[type="submit"] {
-    margin-top: 3em;
-  }
-}
+    margin-top: 3em; } }
 
 button.screenshot {
   border: none;
   justify-self: center;
   width: 15vw;
   height: 15vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
   background-color: #f6fafb;
   color: #d1d1d1;
   font-weight: 700;
@@ -116,196 +74,133 @@ button.screenshot {
   position: fixed;
   bottom: 5vh;
   right: 5vw;
-  font-size: 1.5rem;
-}
+  font-size: 1.5rem; }
+
+@media (min-width: 750px) {
+  button.screenshot {
+    width: 10vh;
+    height: 10vh; } }
 
 textarea {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
   grid-area: notes;
-  min-height: 5.5rem;
-}
-
-textarea::-webkit-input-placeholder {
-  text-align: center;
-}
-
-textarea:-ms-input-placeholder {
-  text-align: center;
-}
-
-textarea::-ms-input-placeholder {
-  text-align: center;
-}
+  min-height: 5.5rem; }
 
 textarea::placeholder {
-  text-align: center;
-}
+  text-align: center; }
 
 .itinerary-list {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr;
   grid-gap: 2.5em;
   padding: 1.3em 0.3em;
   width: 100%;
   height: 100%;
-  z-index: 1;
-}
+  z-index: 1; }
 
 @media (min-width: 450px) {
   .itinerary-list {
-    width: 90vw;
-  }
-}
+    width: 90vw; } }
 
 @media (min-width: 750px) {
   .itinerary-list {
-    -ms-grid-columns: 4fr 5fr;
-        grid-template-columns: 4fr 5fr;
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
-  }
-}
+    grid-template-columns: 4fr 5fr;
+    grid-template-rows: auto; } }
 
 .itinerary-list .header-list {
-  display: none;
-}
+  display: none; }
 
 @media (min-width: 750px) {
   .itinerary-list .header-list {
     display: inline-block;
-    -ms-grid-column-align: center;
-        justify-self: center;
-  }
-}
+    justify-self: center; } }
 
 .itinerary-list h1 {
   text-align: center;
   color: #263336;
   text-transform: uppercase;
   font-size: 1.3rem;
-  font-weight: 700;
-}
+  font-weight: 700; }
 
 .itinerary-list .main-itinerary {
-  -webkit-box-shadow: 0px 26px 37px -26px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 26px 37px -26px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 26px 37px -26px rgba(0, 0, 0, 0.75);
   background: #74afbe;
   background-position: center;
   background-size: cover;
   height: 35vh;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 8vh 1fr;
-      grid-template-rows: 8vh 1fr;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-rows: 8vh 1fr;
+  align-items: center;
   padding: 0 0.5em;
   border-radius: 14px;
-  position: relative;
-}
+  position: relative; }
 
 @media (min-width: 750px) {
   .itinerary-list .main-itinerary {
     min-height: 75vh;
-    padding: 1.2em;
-  }
-}
+    padding: 1.2em; } }
 
 .itinerary,
 .itinerary-edit {
-  display: -ms-grid;
   display: grid;
-      grid-template-areas: "time text-input" "notes notes" "submit submit";
-  grid-gap: 0.4em;
-}
+  grid-template-areas: "time text-input" "notes notes" "submit submit";
+  grid-gap: 0.4em; }
 
 ul {
   min-height: 30vh;
-  display: -ms-grid;
   display: grid;
   grid-auto-rows: 3.4em;
   grid-gap: 0.3em;
-  padding: 0.8em;
-}
+  padding: 0.8em; }
 
 ul #h1 {
-  display: none;
-}
+  display: none; }
 
 @media (min-width: 750px) {
   ul #h1 {
     color: #263336;
     border-bottom: 3px solid #263336;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
+    justify-content: center;
+    align-items: center; } }
 
 ul li {
   list-style: none;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 5fr;
-      grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 5fr;
   grid-gap: 0.4em;
-  text-align: center;
-}
+  text-align: center; }
 
 li .items-data {
   border-radius: 10px;
-  position: relative;
-}
+  position: relative; }
 
 li .items-data .delete {
   position: absolute;
   font-size: 0.7rem;
   top: 3px;
   right: 4px;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 li .items-data .edit {
   position: absolute;
   font-size: 0.7rem;
   top: 20px;
   right: 4px;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 li .items-date {
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
+  justify-content: center;
+  align-items: center; }
 
 li .items-date h3 {
-  font-size: 0.95rem;
-}
+  font-size: 0.95rem; }
 
 li > * {
   background-color: #263336;
   color: #d1d1d1;
-  padding: 0.3em 0.3em;
-}
+  padding: 0.3em 0.3em; }
 
 .modal {
   position: fixed;
@@ -315,71 +210,45 @@ li > * {
   left: 0;
   right: 0;
   bottom: 0;
-  display: -ms-grid;
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   justify-items: center;
   pointer-events: none;
   opacity: 0;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-}
+  transition: opacity 0.5s; }
 
 .modalInner {
   border-radius: 15px;
   padding: 1em;
   padding-top: 6em;
-  -webkit-box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.4);
   position: relative;
-  -webkit-transform: translateY(-100vh);
-          transform: translateY(-100vh);
-  -webkit-transition: all 0.5s;
+  transform: translateY(-100vh);
   transition: all 0.5s;
   min-height: calc(90vh - 100px);
   width: 95vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   background-color: #f0f0f0;
-  position: relative;
-}
+  position: relative; }
 
 @media (min-width: 460px) {
   .modalInner {
-    width: 90vw;
-  }
-}
+    width: 90vw; } }
 
 @media (min-width: 600px) {
   .modalInner {
-    width: 80vw;
-  }
-}
+    width: 80vw; } }
 
 @media (min-width: 880px) {
   .modalInner {
-    width: 65vw;
-  }
-}
+    width: 65vw; } }
 
 @media (min-width: 1180px) {
   .modalInner {
-    width: 50vw;
-  }
-}
+    width: 50vw; } }
 
 .modalInner::before {
   position: absolute;
@@ -391,78 +260,51 @@ li > * {
   right: 0;
   bottom: 0;
   background-color: #263336;
-  -webkit-clip-path: ellipse(99% 32% at 40% 97%);
-          clip-path: ellipse(99% 32% at 40% 97%);
-  z-index: -100;
-}
+  clip-path: ellipse(99% 32% at 40% 97%);
+  z-index: -100; }
 
 .modalInner h1 + .itinerary-edit {
-  margin-top: 1em;
-}
+  margin-top: 1em; }
 
 .modalInner h1 {
   font-family: "Anton", sans-serif;
   text-transform: uppercase;
   color: #263336;
   position: absolute;
-  top: 1.2em;
-}
+  top: 1.2em; }
 
 .modalInner .itinerary-edit {
   position: relative;
-  grid-gap: 1.2em;
-}
+  grid-gap: 1.2em; }
 
 .modalInner .itinerary-edit > * {
   background-color: #74afbe;
   font-family: "Anton", sans-serif;
-  color: #262626;
-}
+  color: #262626; }
 
 .modalInner .itinerary-edit #item {
   text-align: left;
   padding: 0.5em;
   width: 70%;
-  -ms-grid-column-align: end;
-      justify-self: end;
-}
+  justify-self: end; }
 
 .modalInner .itinerary-edit #time {
   padding: 0.8em;
-  min-height: 3rem;
-}
+  min-height: 3rem; }
 
 .modalInner .itinerary-edit textarea {
   min-height: 11rem;
   padding: 0.5em;
-  text-align: left;
-}
-
-.modalInner .itinerary-edit textarea::-webkit-input-placeholder {
-  text-align: left;
-  color: #263336;
-}
-
-.modalInner .itinerary-edit textarea:-ms-input-placeholder {
-  text-align: left;
-  color: #263336;
-}
-
-.modalInner .itinerary-edit textarea::-ms-input-placeholder {
-  text-align: left;
-  color: #263336;
-}
+  text-align: left; }
 
 .modalInner .itinerary-edit textarea::placeholder {
   text-align: left;
-  color: #263336;
-}
+  color: #263336; }
 
 .modalInner .itinerary-edit button {
   border-radius: 10px;
   display: inline-block;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   width: 35%;
   border-bottom: #315d68 4px solid;
   position: relative;
@@ -470,8 +312,7 @@ li > * {
   font-family: "Anton", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.876rem;
-}
+  font-size: 0.876rem; }
 
 .modalInner .itinerary-edit button::before {
   border-radius: 10px;
@@ -483,38 +324,25 @@ li > * {
   right: 0;
   bottom: 0;
   background-color: #26333670;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
-}
+  transform: translateY(-100%);
+  transition: transform 0.3s; }
 
 .modalInnerClose {
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 1.4rem;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .modalInner h3 {
-  text-align: center;
-}
+  text-align: center; }
 
 .modal.open {
   opacity: 1;
-  pointer-events: all;
-}
+  pointer-events: all; }
 
 .modal.open .modalInner {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
+  transform: translateY(0); }
 
 .itinerary-edit button:hover::before {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-/*# sourceMappingURL=itinerary.css.map */
+  transform: translateY(0); }
