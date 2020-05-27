@@ -12,9 +12,9 @@ itineraryForm.addEventListener("submit", (e) => {
     notes: inputs[2].value,
     id: Date.now(),
   };
-  console.log(item);
+  // console.log(item);
   items.push(item); //update items
-  console.info("SUBMITTED");
+  // console.info("SUBMITTED");
   e.target.reset(); //reset to default
   list.dispatchEvent(new CustomEvent("updateItems"));
 });

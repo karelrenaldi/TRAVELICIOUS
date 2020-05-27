@@ -10,12 +10,13 @@ const countryList = [
     'China',
     'America',
     'Australia',
+    'Brazil',
     'England',
-    'Ghana',
-    'Japan',
     'India',
     'Thailand',
-    'Egypt'
+    'Egypt',
+    'Russia',
+    'India',
 ]
 
 const countryData = [
@@ -42,6 +43,30 @@ const countryData = [
         "name" : "America",
         "fill" : am4core.color("#F05C5C"),
         "desc" : "The world's third largest country in size and nearly the third largest in terms of population!"
+    },
+    {
+        "id" : "AU",
+        "name" : "Australia",
+        "fill" : am4core.color("#F05C5C"),
+        "desc" : "Australia is the sixth biggest country in the world by land area, and is part of the Oceanic and Australasian regions!"
+    },
+    {
+        "id" : "BR",
+        "name" : "Brazil",
+        "fill" : am4core.color("#F05C5C"),
+        "desc" : "Brazil is the world's fifth largest country. The country has about 209 million people!"
+    },
+    {
+        "id" : "GB",
+        "name" : "England",
+        "fill" : am4core.color("#F05C5C"),
+        "desc" : "England is a country in Europe. It is a country with over sixty counties in it!"
+    },
+    {
+        "id" : "RU",
+        "name" : "Russia",
+        "fill" : am4core.color("#F05C5C"),
+        "desc" : "Russia is a country that is in Eastern Europe and in North Asia. It is the largest country in the world by land area"
     },
     {
         "id" : "IN",
@@ -152,6 +177,179 @@ const place = [
                 "desc" : "Located on Hangzhou, West Lake was created after the Chinese love for garden-style parks for recreation.",
                 "img" : "place_westlake.jpg"
             }
+        ]
+    },
+    {
+        "country" : "America",
+        "place" : [
+            {
+                "name" : "Yosemite National Park",
+                "desc" : `Located in the Sierra Nevada, Yosemite National Park is a vast stretch of wilderness that covers thousands of acres.`,
+                "img" : "Yosemite.jpg"
+            },
+            {
+                "name" : "Portland",
+                "desc" : `Straddling the Willamette River in the shadow of the majestic Mount Hood, Portland is the largest city in Oregon as 
+                          well as the third largest city of the US Pacific Northwest region.`,
+                "img" : "portland.jpg"
+            },
+            {
+                "name" : "New York City",
+                "desc" : `The jewel in the crown of the USA when it comes to urban areas, New York is a megacity that is absolutely packed 
+                          full of iconic places, areas, and buildings.`,
+                "img" : "new_york_city.jpg"
+            },
+            {
+                "name" : "Grand Canyon",
+                "desc" : `Attracting millions of visitors every year, the Grand Canyon is one of those bucket list destinations in the USA. 
+                          Located in northern Arizona, this massive natural wonder was carved by the Colorado River over a period of several 
+                          million years.`,
+                "img" : "grand_canyon.jpg"
+            },
+            {
+                "name" : "San Francisco",
+                "desc" : `Set on the tip of a peninsula, San Francisco is a beautiful city in northern California that is famous 
+                          for a lot (and we really mean a lot) of things.`,
+                "img" : "san_francisco.jpg"
+            },
+        ]
+    },
+    {
+        "country" : "Australia",
+        "place" : [
+            {
+                "name" : "Sydney Opera House",
+                "desc" : `Shaped like huge shells or billowing sails, this famous building on Sydney's Bennelong Point graces the list 
+                          of UNESCO World Heritage Sites and is one of the world's great architectural icons.`,
+                "img" : "Opera-House.jpg"
+            },
+            {
+                "name" : "Great Barrier Reef Marine Park",
+                "desc" : `Great Barrier Reef Marine Park was established to protect its fragile ecosystems, which include more than 
+                          3,000 coral reefs; 600 continental islands, including the beautiful Whitsunday group.`,
+                "img" : "Great-Barrier.jpg"
+            },
+            {
+                "name" : "Uluru-Kata Tjuta National Park",
+                "desc" : `Deep in the heart of Australia's Red Centre, Uluru (formerly Ayers Rock), is one of the most photographed 
+                          natural wonders in the country.`,
+                "img" : "Uluru-Kata.jpg"
+            },
+            {
+                "name" : "Sydney Harbour Bridge",
+                "desc" : `Along with the Opera House, the Sydney Harbour Bridge is one of Australia's most famous tourist attractions. 
+                          Affectionately called "the Coathanger," this impressive feat of construction is the largest steel arch bridge 
+                          in the world.`,
+                "img" : "Sydney-Harbour.jpg"
+            },
+            {
+                "name" : "Blue Mountains National Park",
+                "desc" : `A UNESCO World Heritage Site, beautiful Blue Mountains National Park lies 81 kilometers west of Sydney and is a 
+                          popular day trip from the city.`,
+                "img" : "Blue-Mountains-NP.jpg"
+            },
+        ]
+    },
+    {
+        "country" : "Brazil",
+        "place" : [
+            {
+                "name" : "Salvador",
+                "desc" : `Located in the state of Bahia, Salvador has a phenomenal energy that’s notable even for Brazil.
+                          Most known for being Portugal’s New World capital, it maintains a great deal of its colonial architecture 
+                          and you’ll find the historic centre of the town in the Pelourinho neighbourhood.`,
+                "img" : "Salvador.jpg"
+            },
+            {
+                "name" : "Sugar Loaf, Rio de Janeiro",
+                "desc" : `The easily recognized emblem of Rio de Janeiro, the rounded rock peak of Sugar Loaf juts out of a tree-covered promontory, 
+                          rising 394 meters above the beaches and city.`,
+                "img" : "Sugar-Loaf.jpg"
+            },
+            {
+                "name" : "Cristo Redentor, Rio de Janeiro",
+                "desc" : `With arms outstretched 28 meters, as if to encompass all of humanity, the colossal Art Deco statue of Christ, 
+                          called Cristo Redentor (Christ the Redeemer), gazes out over Rio de Janeiro and the bay from the summit 
+                          of Corcovado.`,
+                "img" : "cristo-redentor.jpg"
+            },
+            {
+                "name" : "Carnaval, Rio de Janeiro",
+                "desc" : `Few shows match Rio's pre-Lenten Carnaval (Carnival) extravaganza for color, sound, action, and exuberance.`,
+                "img" : "Carnaval.jpg"
+            },
+            {
+                "name" : "Amazon Rain Forests",
+                "desc" : `About 20 kilometers southeast of Manaus, the dark Rio Negro waters meet the light muddy water of the Rio Solimões, 
+                          flowing side by side for about six kilometers before mixing as the Amazon.`,
+                "img" : "Amazon-Forest.jpg",
+            },
+        ]
+    },
+    {
+        "country" : "England",
+        "place" : [
+            {
+                "name" : "London",
+                "desc" : `London is a fascinating city laden with history, filled with museums and art galleries, beautiful green parks, 
+                          fantastic shopping and dining, a vibrant theatre scene, and, of course, royalty.`,
+                "img" : "london.jpg"
+            },
+            {
+                "name" : "Scottish Highlands",
+                "desc" : `The Scottish Highlands is the rugged northern and northwestern portion of Scotland. 
+                          This is the Scotland conjured up by visions of tartan, kilts, lochs and Braveheart.`,
+                "img" : "scottish_highlands.jpg"
+            },
+            {
+                "name" : "Stonehenge",
+                "desc" : `One of the most famous sites in the world, Stonehenge is composed of earthworks surrounding a 
+                          circular setting of large standing stones in south west England.`,
+                "img" : "stonehenge.jpg"
+            },
+            {
+                "name" : "Edinburgh",
+                "desc" : `Visitors to Edinburgh need to be prepared to experience history, from the cobblestone streets 
+                          to Edinburgh Castle that is symbolic of Scotland’s capital.`,
+                "img" : "edinburgh.jpg"
+            },
+            {
+                "name" : "York",
+                "desc" : `York is a walled city with a rich heritage located where the River Foss meets the River Ouse. 
+                          An impressive number of attractions are packed into the space of this ancient city.`,
+                "img" : "york.jpg"
+            },
+        ]
+    },
+    {
+        "country" : "Russia",
+        "place" : [
+            {
+                "name" : "Yekaterinburg",
+                "desc" : `Yekaterinburg is an industrial city in the Ural Mountains that has many things going for it.`,
+                "img" : "yekaterinburg.jpg"
+            },
+            {
+                "name" : "Sochi",
+                "desc" : `Sochi on the Black Sea is a great winter sports destination and, in fact, hosted the 2014 Winter Olympics.`,
+                "img" : "sochi.jpg"
+            },
+            {
+                "name" : "Veliky Novgorod",
+                "desc" : `Founded in the 10th century, Veliky Novgorod is one of the oldest cities in Russia’s far north.`,
+                "img" : "veliky_novgorod.jpg"
+            },
+            {
+                "name" : "Vladivostok",
+                "desc" : `Mountains and bays surround Vladivostok, making it a stunning beautiful city in Russia’s east.`,
+                "img" : "vladivostok.jpg"
+            },
+            {
+                "name" : "Nizhny Novgorod",
+                "desc" : `Russia’s fifth largest city sits at the confluence of the Volga and Oka rivers.
+                          The town began as a fortress in the 13th century.`,
+                "img" : "nizhny_novgorod.jpg"
+            },
         ]
     },
     {
@@ -375,35 +573,35 @@ const food = [
                 "desc" : `“Hot dog” means a whole, cured, cooked sausage that is skinless or stuffed in a casing, 
                           that may be known as a frankfurter, frank, furter, wiener, red hot, vienna, bologna, 
                           garlic bologna, or knockwurst, and that may be served in a bun or roll.`,
-                "img" : "food_american-hotdog.jpg"
+                "img" : "american-hotdog.jpg"
             },
             {
                 "name" : "Apple Pie",
                 "desc" : `An apple pie is a pie in which the principal filling ingredient is 
                           apple. It is often served with whipped cream, ice cream ("apple pie à la mode"), 
                           or cheddar cheese.`,
-                "img" : "food_Apple_Pie.jpg"
+                "img" : "Apple_Pie.jpg"
             },
             {
                 "name" : "Hamburger",
                 "desc" : `A hamburger/burger is a sandwich consisting of one or more cooked patties of ground meat, 
-                          usually beef, placed inside a sliced bread roll or bun. 
-                          The patty may be pan fried, grilled, smoked or flame broiled.`,
-                "img" : "food_burger.jpg"
+                          usually beef, placed inside a sliced bread roll or bun.The patty may be pan fried, grilled, 
+                          smoked or flame broiled.`,
+                "img" : "burger.jpg"
             },
             {
                 "name" : "Mac & Cheese",
                 "desc" : `Macaroni and cheese. Macaroni and cheese—also called mac 'n' cheese in the US and Canadian English, 
-                          macaroni cheese in the United Kingdom—is a dish of English origin, 
-                          consisting of cooked macaroni pasta and a cheese sauce, most commonly cheddar.`,
-                "img" : "food_Mac_And_Cheese.jpg"
+                          macaroni cheese in the United Kingdom—is a dish of English origin,consisting of cooked macaroni pasta 
+                          and a cheese sauce, most commonly cheddar.`,
+                "img" : "Mac_And_Cheese.jpg"
             },
             {
                 "name" : "Newyork Pizza",
                 "desc" : `New York-style pizza is pizza made with a characteristically large hand-tossed thin crust, 
                           often sold in wide slices to go. The crust is thick and crisp only along its edge, yet soft, thin, 
                           and pliable enough beneath its toppings to be folded in half to eat.`,
-                "img" : "food_newYork-Pizza.jpg"
+                "img" : "newYork-Pizza.jpg"
             },
         ]
     },
@@ -414,34 +612,32 @@ const food = [
                 "name" : "Chicken Parmigiana",
                 "desc" : `Chicken parmigiana, or chicken parmesan, is a dish that consists of breaded chicken breast covered 
                           in tomato sauce and mozzarella, parmesan, or provolone cheese.`,
-                "img" : "food_Chicken-Parmigiana.jpg"
+                "img" : "Chicken-Parmigiana.jpg"
             },
             {
                 "name" : "Lamington",
                 "desc" : `A lamington is an Australian cake made from squares of butter cake or sponge cake coated in an 
-                          outer layer of chocolate sauce and rolled in desiccated coconut. The thin mixture is absorbed 
-                          into the outside of the sponge cake and left to set, giving the cake a distinctive texture. 
-                          A common variation has a layer of cream or strawberry jam between two lamington halves.`,
-                "img" : "food_lamington.jpg"
+                          outer layer of chocolate sauce and rolled in desiccated coconut.`,
+                "img" : "lamington.jpg"
             },
             {
                 "name" : "Meat Pie",
                 "desc" : `An Australian or New Zealand meat pie is a hand-sized meat pie containing diced or minced meat and gravy, 
                           sometimes with onion, mushrooms, or cheese and often consumed as a takeaway food snack.`,
-                "img" : "food_meat-pie.jpg"
+                "img" : "meat-pies.jpg"
             },
             {
                 "name" : "Pavlova",
                 "desc" : `Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlova.
-                          It is a meringue dessert with a crisp crust and soft, 
-                          light inside, usually topped with fruit and whipped cream.`,
-                "img" : "food_Pavlova.jpg"
+                          It is a meringue dessert with a crisp crust and soft, light inside, usually topped with 
+                          fruit and whipped cream.`,
+                "img" : "Pavlova.jpg"
             },
             {
                 "name" : "Pumpkin Soup",
                 "desc" : `Pumpkin soup is a usually 'bound' (thick) soup made from a purée of pumpkin. 
                           It is made by combining the meat of a blended pumpkin with broth or stock.`,
-                "img" : "food_pumpkin-soup.jpg"
+                "img" : "pumpkin-soup.jpg"
             },
         ]
     },
@@ -472,6 +668,42 @@ const food = [
                 "name" : "Tom Kha Gai",
                 "desc" : `This sweet and tangy soup dish is another safe bet for travelers! If you’re curious, this Thai food dish is made of chicken strips, chili, galangal, lemongrass, shallots, and lime that are cooked in coconut milk for a tasty meal.`,
                 "img" : "food_tomkhagai.jpg"
+            }
+        ]
+    },
+    {
+        "country" : "Brazil",
+        "food" : [
+            {
+                "name" : "Barbecued meat",
+                "desc" : `Brazil and Argentina both claim to be South America’s barbecue champion.
+                          And while each country takes a different approach to its meat, from the cuts to the accompaniments.`,
+                "img" : "barbecued-meats.jpg"
+            },
+            {
+                "name" : "Cachaça",
+                "desc" : `Dating back to the 1500s, cachaça is made from fermented sugarcane juice and is best known as the fiery kick 
+                          in caipirinhas – Brazil’s national cocktail.`,
+                "img" : "caipirinhas.jpg"
+            },
+            {
+                "name" : "Brigadeiros",
+                "desc" : `Brazil’s answer to the chocolate truffle, brigadeiros are so simple to make that they quite literally 
+                          get rolled out for kids’ parties nationwide.`,
+                "img" : "brigadeiro.jpg"
+            },
+            {
+                "name" : "Quindim",
+                "desc" : `Another favourite from Bahia, quindim is a glossy yellow sweet treat made with nothing more than eggs, 
+                          sugar and coconut (with butter a common addition).`,
+                "img" : "quindim.jpg"
+            },
+            {
+                "name" : "Feijoada",
+                "desc" : `One of the few dishes eaten the length and breadth of Brazil, feijoada is a hearty stew of black beans, 
+                          sausages and cuts of pork of varying quality – traditionally veering towards the lower end, with trotters 
+                          and ears all going into the mix.`,
+                "img" : "feijoada.jpg"
             },
         ]
     },
@@ -504,5 +736,72 @@ const food = [
                 "img" : "food_Macaroni.jpg"
             },
         ]
-    }
+    },
+    {
+        "country" : "England",
+        "food" : [
+            {
+                "name" : "Cumberland Sausage",
+                "desc" : `Cumberland sausage is a pork sausage that originated in the ancient county of Cumberland, England, now part of Cumbria.`,
+                "img" : "cumberland_sausage.jpg"
+            },
+            {
+                "name" : "English Breakfast",
+                "desc" : `The "traditional" full English breakfast, treated as a dish rather than a meal, includes bacon, 
+                          fried, poached or scrambled eggs, fried or grilled tomatoes, fried mushrooms, fried bread or buttered toast, 
+                          and sausages`,
+                "img" : "english_breakfast.jpg"
+            },
+            {
+                "name" : "Lancashire Hotpot",
+                "desc" : `Lancashire hotpot is a stew originating from Lancashire in the North West of England.`,
+                "img" : "lanchashire_hotpot.jpg"
+            },
+            {
+                "name" : "Roast Beef",
+                "desc" : `Roast beef is a traditional English dish of beef which is roasted. Essentially prepared as a main meal, 
+                          the leftovers are often used in sandwiches and sometimes are used to make hash.`,
+                "img" : "Roast_Beef.jpg"
+            },
+            {
+                "name" : "Yorkshire pudding",
+                "desc" : `Yorkshire pudding is a common English side dish consisting of a baked pudding made from batter consisting 
+                          of eggs, flour, and milk or water.`,
+                "img" : "Yokshire.jpg"
+            },
+        ]
+    },
+    {
+        "country" : "Russia",
+        "food" : [
+            {
+                "name" : "Borscht",
+                "desc" : `Borscht is a beet soup that originated in the Ukraine and was quickly adopted as a Russian specialty as well.`,
+                "img" : "Borscht.jpg"
+            },
+            {
+                "name" : "Shchi",
+                "desc" : `Shchi is a typical cabbage soup made from either fresh or fermented cabbage.`,
+                "img" : "Shchi.jpg"
+            },
+            {
+                "name" : "Solyanka",
+                "desc" : `Solyanka is a thick soup that is plentiful enough to be a meal in itself. 
+                          This soup is made with various types of meat, including sausage, bacon, ham, and beef, 
+                          as well as vegetables such as cabbage, carrots, onions, and potatoes.`,
+                "img" : "Solyanka.jpg"
+            },
+            {
+                "name" : "Ukha",
+                "desc" : `If you like seafood, try ukha, a fish soup with a clear broth. 
+                          Many different kinds of fish can be used to make this soup.`,
+                "img" : "Ukha.jpg"
+            },
+            {
+                "name" : "Pirozhki",
+                "desc" : `These little baked or fried puff pastries are packed full of potatoes, meat, cabbage, or cheese.`,
+                "img" : "Pirozhki.jpg"
+            },
+        ]
+    },
 ]

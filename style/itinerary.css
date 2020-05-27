@@ -231,11 +231,11 @@ body {
   justify-items: center;
   -ms-flex-line-pack: start;
       align-content: start;
-  font-family: "Josefin Sans", san-serif;
+  font-family: "Archia";
 }
 
 input[type="text"], input[type="time"], button[type="submit"], textarea {
-  font-family: "Anton", sans-serif;
+  font-family: "Archia";
   background-color: #263336;
   border-radius: 4px;
   color: #d1d1d1;
@@ -250,6 +250,7 @@ input[type="text"] {
   -ms-grid-column: 2;
   grid-area: text-input;
   padding: 0.3em 0.5em;
+  min-width: 7.5rem;
 }
 
 input[type="text"]::-webkit-input-placeholder {
@@ -274,7 +275,7 @@ input[type="time"] {
   grid-area: time;
   min-height: 2rem;
   text-transform: uppercase;
-  min-width: 6rem;
+  min-width: 7.5rem;
 }
 
 button[type="submit"] {
@@ -289,9 +290,16 @@ button[type="submit"] {
   border-radius: 50%;
   width: 4.2em;
   height: 4.2em;
-  -webkit-box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
   background-color: #f6fafb;
+  -webkit-box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
+          box-shadow: 2.5px 2.5px 5px rgba(50, 50, 50, 0.1);
+  -webkit-box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.1);
+          box-shadow: inset 0px 0px 5px rgba(50, 50, 50, 0.1);
+}
+
+button[type="submit"]:hover {
+  -webkit-box-shadow: inset 0px 0px 10px rgba(50, 50, 50, 0.2);
+          box-shadow: inset 0px 0px 10px rgba(50, 50, 50, 0.2);
 }
 
 @media (min-width: 750px) {
@@ -315,8 +323,6 @@ button.screenshot {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
   background-color: #f6fafb;
   color: #d1d1d1;
   font-weight: 700;
@@ -363,12 +369,13 @@ textarea::placeholder {
 .itinerary-list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
   grid-gap: 2.5em;
   padding: 1.3em 0.3em;
-  width: 100%;
-  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 1;
 }
 
@@ -382,8 +389,8 @@ textarea::placeholder {
   .itinerary-list {
     -ms-grid-columns: 4fr 5fr;
         grid-template-columns: 4fr 5fr;
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
+    -ms-grid-rows: 70vh;
+        grid-template-rows: 70vh;
   }
 }
 
@@ -413,7 +420,7 @@ textarea::placeholder {
   background: #74afbe;
   background-position: center;
   background-size: cover;
-  height: 35vh;
+  height: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 8vh 1fr;
@@ -441,6 +448,24 @@ textarea::placeholder {
   grid-gap: 0.4em;
 }
 
+.list-container {
+  width: 100%;
+  height: 30vh;
+  overflow-y: scroll;
+}
+
+@media (min-width: 750px) {
+  .list-container {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.itinerary-container {
+  width: 100%;
+  height: 100%;
+}
+
 ul {
   min-height: 30vh;
   display: -ms-grid;
@@ -448,6 +473,8 @@ ul {
   grid-auto-rows: 3.4em;
   grid-gap: 0.3em;
   padding: 0.8em;
+  background-color: #f6fafb;
+  border-radius: 14px;
 }
 
 ul #h1 {

@@ -22,11 +22,11 @@ body {
   display: grid;
   justify-items: center;
   align-content: start;
-  font-family: $font-josefinSans;
+  font-family: "Archia";
 }
 
 %inputBase {
-  font-family: $font-anton;
+  font-family: "Archia";
   background-color: #263336;
   border-radius: 4px;
   color: $p_color1b;
@@ -40,6 +40,7 @@ body {
 input[type="text"] {
   grid-area: text-input;
   padding: 0.3em 0.5em;
+  min-width: 7.5rem;
   &::placeholder {
     text-align: center;
   }
@@ -49,7 +50,7 @@ input[type="time"] {
   grid-area: time;
   min-height: 2rem;
   text-transform: uppercase;
-  min-width: 6rem;
+  min-width: 7.5rem;
   @extend %inputBase;
 }
 button {
@@ -62,8 +63,12 @@ button {
     border-radius: 50%;
     width: 4.2em;
     height: 4.2em;
-    box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
     background-color: $p_color1;
+    @include create_shadow(2.5px, 2.5px, 5px, 0.1);
+    @include create_innerShadow(0px, 0px, 5px, 0.1);
+    &:hover{
+      @include create_innerShadow(0px, 0px, 10px, 0.2);
+    }
     @media (min-width: 750px) {
       margin-top: 3em;
     }
@@ -71,12 +76,11 @@ button {
   &.screenshot {
     border: none;
     justify-self: center;
-    @include setup_size(15vw,15vw);
+    @include setup_size(15vw, 15vw);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    box-shadow: 0px 5px 45px -9px rgba(0, 0, 0, 0.75);
     background-color: $p_color1;
     color: $p_color1b;
     font-weight: 700;
@@ -104,17 +108,17 @@ textarea {
 
 .itinerary-list {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto;
   grid-gap: 2.5em;
   padding: 1.3em 0.3em;
-  @include setup_size(100%,100%);
+  justify-content: center;
   z-index: 1;
   @media (min-width: 450px) {
     width: 90vw;
   }
   @media (min-width: 750px) {
     grid-template-columns: 4fr 5fr;
-    grid-template-rows: auto;
+    grid-template-rows: 70vh;
   }
   .header-list {
     display: none;
@@ -135,7 +139,7 @@ textarea {
     background: $p_color2;
     background-position: center;
     background-size: cover;
-    height: 35vh;
+    height: 100%;
     display: grid;
     grid-template-rows: 8vh 1fr;
     align-items: center;
@@ -159,12 +163,26 @@ textarea {
   grid-gap: 0.4em;
 }
 
+.list-container{
+  @include setup_size(100%,30vh);
+  overflow-y: scroll;
+  @media(min-width : 750px){
+    @include setup_size(100%,100%);
+  }
+}
+
+.itinerary-container{
+  @include setup_size(100%,100%);
+}
+
 ul {
   min-height: 30vh;
   display: grid;
   grid-auto-rows: 3.4em;
   grid-gap: 0.3em;
   padding: 0.8em;
+  background-color: $p_color1;
+  border-radius: 14px;
   #h1 {
     display: none;
     @media (min-width: 750px) {
